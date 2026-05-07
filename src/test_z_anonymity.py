@@ -7,7 +7,10 @@ import multiprocessing
 from multiprocessing import Pool
 
 import numpy as np
+from pm4py.algo.evaluation.replay_fitness.variants import alignment_based
+from scipy.constants import precision
 
+from evaluation.metrics import compute_quality_metrics
 from src.utils.log_utils import load_event_log
 from src.definitions import get_output_path
 from src.anonymization.z_anonymity import apply_z_anonymity
@@ -73,6 +76,11 @@ def _run_single_task(args):
     algorithm = args['algorithm']
     seed = args.get('seed', None)
 
+    # alignment based fitness and precision computation
+    alignment_based = args.get('alignment_based', False)
+
+    # multiprocessing
+    multiprocessing = args.get('multiprocessing', False)
     global _worker_original_log, _worker_source_attribute
     original_log = _worker_original_log
     source_attribute = _worker_source_attribute
@@ -94,7 +102,10 @@ def _run_single_task(args):
 
     anonymized_log_stats = get_event_log_stats(original_log, anonymized_log, number_of_edited_traces)
     ratio_of_remaining_directly_follows = get_ratio_of_remaining_directly_follows(original_log, anonymized_log)
-    fitness = compute_fitness(original_log, anonymized_log)
+    # compute the quality metrics
+    fitness, precision, generalization, simplicity = compute_quality_metrics(original_log, anonymized_log, alignment_based, multiprocessing)
+    # fitness = compute_fitness(original_log, anonymized_log)
+
 
     if len(anonymized_log) == 0:
         reidentification_protection = None
@@ -138,6 +149,9 @@ def _run_single_task(args):
         'anonymized_log_stats': anonymized_log_stats,
         'ratio_of_remaining_directly_follows': ratio_of_remaining_directly_follows,
         'fitness': fitness,
+        'precision': precision,
+        'generalization': generalization,
+        'simplicity': simplicity,
         'reidentification_protection': reidentification_protection
     }
     return result
@@ -154,6 +168,8 @@ def test_different_z_values_with_pool(
     log_name: str = None,
     cores_to_use: int = 4,
     seed: int | None = None,
+    alignment_based: bool = False,
+    multi_processing: bool = False,
 ):
 
     # Limit used cores, to ensure system responsiveness
@@ -179,7 +195,9 @@ def test_different_z_values_with_pool(
                 'source_attribute': source_attribute,
                 'log_name': log_name,
                 'algorithm': 'z-anonymity',
-                'seed': seed
+                'seed': seed,
+                'alignment_based': alignment_based,
+                'multiprocessing': multi_processing,
             })
     for z in z_values:  # baseline tasks
         tasks.append({
@@ -192,7 +210,9 @@ def test_different_z_values_with_pool(
             'source_attribute': source_attribute,
             'log_name': log_name,
             'algorithm': 'baseline',
-            'seed': seed
+            'seed': seed,
+            'alignment_based': alignment_based,
+            'multiprocessing': multi_processing,
         })
 
     mode_suffix = f"_{mode}"
@@ -224,7 +244,7 @@ def main():
             source_attribute = 'org:resource'
         full_path = os.path.join(EVENT_LOG_PATH, raw_log)
 
-        TIME_WINDOWS = [259200]  # 24h in seconds
+        TIME_WINDOWS = [259200]  # 72h in seconds
         Z_VALUES = list(range(1, 31))
         for mode in ['ngram']:  # you can add 'single' if desired
             for ngram_size in [1, 2, 3]:
@@ -244,6 +264,8 @@ def main():
                         log_name=log_name,
                         cores_to_use=4,  # adjust for your machine
                         seed=42,
+                        alignment_based=True,
+                        multi_processing=False,
                     )
 
 

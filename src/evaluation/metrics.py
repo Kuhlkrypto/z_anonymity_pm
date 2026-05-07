@@ -1,5 +1,8 @@
 from collections import defaultdict
 from typing import Dict, Set, Tuple, Optional, Any
+
+import pm4py
+from pm4py import generalization_tbr, Marking, PetriNet
 from pm4py.objects.log.obj import EventLog
 from pm4py.algo.discovery.inductive import algorithm as inductive_miner
 from pm4py.algo.conformance.tokenreplay import algorithm as token_replay
@@ -7,7 +10,9 @@ from pm4py.algo.conformance.tokenreplay import algorithm as token_replay
 from typing import Optional
 from pm4py.objects.log.obj import EventLog
 from pm4py.discovery import discover_petri_net_inductive
-from pm4py.conformance import fitness_token_based_replay
+from pm4py.conformance import fitness_alignments, fitness_token_based_replay # Fitness assessment
+from pm4py.conformance import precision_alignments, precision_token_based_replay # Precision assessment
+from pm4py import simplicity_petri_net
 
 
 def get_alphabet(log: EventLog) -> Set[str]:
@@ -204,7 +209,7 @@ def get_ratio_of_remaining_directly_follows(
 
 
 def compute_fitness(
-    reference_log: EventLog, anonymized_log: EventLog
+    anonymized_log: EventLog, net, im, fm, alignment_based:bool, multi_processing: bool
 ) -> Optional[float]:
     """
     Mines a Petri net from reference_log using the inductive miner (with optional noise threshold)
@@ -215,15 +220,98 @@ def compute_fitness(
     if len(anonymized_log) == 0:
         return None
     try:
-        # Discover model
-        net, initial_marking, final_marking = discover_petri_net_inductive(
-            reference_log
-        )
-        # Get the log-level token-based replay fitness
-        fitness_dict = fitness_token_based_replay(
-            anonymized_log, net, initial_marking, final_marking
-        )
-        # fitness_token_based_replay returns keys like 'average_trace_fitness'
+
+        if alignment_based:
+            fitness_dict = fitness_alignments(anonymized_log, net, im, fm, multi_processing=multi_processing)
+        else:
+            # Get the log-level token-based replay fitness
+            fitness_dict = fitness_token_based_replay(
+                anonymized_log, net, im, fm
+            )
+        # fitness_token_based_replay and fitness_alignments returns keys like 'average_trace_fitness'
         return fitness_dict.get("average_trace_fitness", None)
+
     except Exception:
         return None
+
+
+
+def compute_precision(
+    anonymized_log: EventLog, net, im, fm, alignment_based: bool, muli_processing: bool
+) -> Optional[float]:
+    """
+    Computes the precision of the model w.r.t. the anonymized log.
+
+
+    Returns precision of the model w.r.t. the anonymized log or None if something fails.
+
+    """
+
+    try:
+        if alignment_based:
+            return precision_alignments(anonymized_log, net, im, fm, multi_processing=muli_processing)
+
+        return precision_token_based_replay(anonymized_log, net, im, fm)
+
+    except Exception:
+        return None
+
+def discover_model(log: EventLog, muli_processing=False) -> Optional[tuple[PetriNet, Marking, Marking]]:
+    try:
+        return discover_petri_net_inductive(log, multi_processing=muli_processing)
+    except Exception:
+        return None
+
+def compute_generality(reference_log, net, im, fm) -> Optional[float]:
+    try:
+        return generalization_tbr(reference_log, net, im, fm)
+    except Exception:
+        return None
+
+def compute_simplicity(net, im, fm) -> Optional[float]:
+    try:
+        return simplicity_petri_net(net, im, fm)
+    except Exception:
+        return None
+
+def compute_quality_metrics(
+    reference_log: EventLog, anonymized_log: EventLog, alignment_based: bool = False, multi_processing: bool = False
+) -> Tuple[Optional[float], Optional[float], Optional[float], Optional[float]]:
+
+    if len(anonymized_log) == 0:
+        return None, None, None, None
+
+    try:
+
+        # Discover model using reference log
+        model = discover_model(reference_log, multi_processing)
+
+        if model is None:
+            return None, None, None, None
+        net, im, fm = model
+
+        # compute fitness of the model against anonymized log
+        fitness = compute_fitness(anonymized_log, net, im, fm, alignment_based, multi_processing)
+
+        # compute precision of the model against anonymized log
+        precision = compute_precision(anonymized_log, net, im, fm, alignment_based, multi_processing)
+
+        model = discover_model(anonymized_log, multi_processing)
+        if model is None:
+            return fitness, precision, None, None
+
+        net, im, fm = model
+
+        # compute generalization using the newly discovered model
+        generalization = compute_generality(reference_log, net, im, fm)
+
+        # compute simplicity of 'anonymized model'
+        simplicity = compute_simplicity(net, im, fm)
+
+
+
+        return fitness, precision, generalization, simplicity
+
+    except Exception:
+        return None, None, None, None
+
