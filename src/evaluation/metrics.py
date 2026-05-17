@@ -1,3 +1,4 @@
+import email.utils
 from collections import defaultdict
 from typing import Dict, Set, Tuple, Optional, Any
 
@@ -259,7 +260,8 @@ def compute_precision(
 def discover_model(log: EventLog, muli_processing=False) -> Optional[tuple[PetriNet, Marking, Marking]]:
     try:
         return discover_petri_net_inductive(log, multi_processing=muli_processing)
-    except Exception:
+    except Exception as e:
+        print(e)
         return None
 
 def compute_generality(reference_log, net, im, fm) -> Optional[float]:
@@ -279,30 +281,32 @@ def compute_quality_metrics(
 ) -> Tuple[Optional[float], Optional[float], Optional[float], Optional[float]]:
 
     if len(anonymized_log) == 0:
+        print("no anonymized log")
+        print(anonymized_log)
         return None, None, None, None
 
     try:
 
-        # Discover model using reference log
-        model = discover_model(reference_log, multi_processing)
+        # Discover model using anonymized log
+        model = discover_model(anonymized_log, multi_processing)
 
         if model is None:
             return None, None, None, None
         net, im, fm = model
 
         # compute fitness of the model against anonymized log
-        fitness = compute_fitness(anonymized_log, net, im, fm, alignment_based, multi_processing)
+        fitness = compute_fitness(reference_log, net, im, fm, alignment_based, multi_processing)
 
         # compute precision of the model against anonymized log
-        precision = compute_precision(anonymized_log, net, im, fm, alignment_based, multi_processing)
+        precision = compute_precision(reference_log, net, im, fm, alignment_based, multi_processing)
 
-        model = discover_model(anonymized_log, multi_processing)
-        if model is None:
-            return fitness, precision, None, None
+        # model = discover_model(anonymized_log, multi_processing)
+        # if model is None:
+        #     return fitness, precision, None, None
 
-        net, im, fm = model
+        # net, im, fm = model
 
-        # compute generalization using the newly discovered model
+        # compute generalization
         generalization = compute_generality(reference_log, net, im, fm)
 
         # compute simplicity of 'anonymized model'

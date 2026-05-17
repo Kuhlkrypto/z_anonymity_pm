@@ -8,7 +8,6 @@ from multiprocessing import Pool
 
 import numpy as np
 from pm4py.algo.evaluation.replay_fitness.variants import alignment_based
-from scipy.constants import precision
 
 from evaluation.metrics import compute_quality_metrics
 from src.utils.log_utils import load_event_log
@@ -245,9 +244,9 @@ def main():
         full_path = os.path.join(EVENT_LOG_PATH, raw_log)
 
         TIME_WINDOWS = [259200]  # 72h in seconds
-        Z_VALUES = list(range(1, 31))
+        Z_VALUES = list(range(25, 26))
         for mode in ['ngram']:  # you can add 'single' if desired
-            for ngram_size in [1, 2, 3]:
+            for ngram_size in [3]:
                 for explicit in [False, True]:
                     print(
                         f"\nTesting z-anonymity for {log_name} | "
