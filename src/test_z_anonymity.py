@@ -62,7 +62,7 @@ def _worker_init(log_path: str, source_attribute: str):
 
 def _run_single_task(args):
     """
-    Task executed in worker. Expects a dict with keys:
+    Task executed in worker (Pool mode). Expects a dict with keys:
       z, time_window, mode, ngram_size, explicit, log_name, algorithm, seed
     Uses cached original log loaded in initializer.
     """
@@ -78,12 +78,27 @@ def _run_single_task(args):
     # alignment based fitness and precision computation
     alignment_based = args.get('alignment_based', False)
 
-    # multiprocessing
-    multiprocessing = args.get('multiprocessing', False)
+    # In Pool mode multiprocessing is always False (outer parallelism used instead)
+    use_multiprocessing = False
     global _worker_original_log, _worker_source_attribute
     original_log = _worker_original_log
     source_attribute = _worker_source_attribute
 
+    return _execute_task(
+        original_log, source_attribute,
+        z, time_window, mode, ngram_size, explicit,
+        log_name, algorithm, seed, alignment_based, use_multiprocessing
+    )
+
+
+def _execute_task(
+    original_log, source_attribute,
+    z, time_window, mode, ngram_size, explicit,
+    log_name, algorithm, seed, alignment_based, use_multiprocessing
+):
+    """
+    Core computation shared between Pool-worker and sequential execution paths.
+    """
     # Apply anonymization or baseline
     if algorithm == 'baseline':
         anonymized_log, number_of_edited_traces = apply_baseline(
@@ -101,40 +116,22 @@ def _run_single_task(args):
 
     anonymized_log_stats = get_event_log_stats(original_log, anonymized_log, number_of_edited_traces)
     ratio_of_remaining_directly_follows = get_ratio_of_remaining_directly_follows(original_log, anonymized_log)
-    # compute the quality metrics
-    fitness, precision, generalization, simplicity = compute_quality_metrics(original_log, anonymized_log, alignment_based, multiprocessing)
-    # fitness = compute_fitness(original_log, anonymized_log)
 
+    # compute the quality metrics – multiprocessing flag controls internal pm4py parallelism
+    fitness, precision, generalization, simplicity = compute_quality_metrics(
+        original_log, anonymized_log, alignment_based, use_multiprocessing
+    )
 
     if len(anonymized_log) == 0:
         reidentification_protection = None
-        reidentification_protection_A_star = None
     else:
         # Determine base projection
-        if algorithm != 'baseline' and mode == 'ngram':
-            projection_base = 'A_list*'
-        elif algorithm != 'baseline':
-            projection_base = 'A_list*'
-        else:
-            projection_base = 'A_list*'
+        projection_base = 'A_list*'
 
-        if projection_base is not None:
-            reid_risk = calculate_reidentification_risk(
-                anonymized_log, projection=projection_base, ngram_size=ngram_size, seed=seed
-            )
-            reidentification_protection = 1 - reid_risk['risk_metrics']['mean']
-        else:
-            reid_risk = calculate_reidentification_risk(
-                anonymized_log, ngram_size=ngram_size, seed=seed
-            )
-            reidentification_protection = 1 - reid_risk['risk_metrics']['mean']
-
-        ''' 
-        reid_risk_A_star = calculate_reidentification_risk(
-            anonymized_log, projection='A_list*', ngram_size=ngram_size, seed=seed
+        reid_risk = calculate_reidentification_risk(
+            anonymized_log, projection=projection_base, ngram_size=ngram_size, seed=seed
         )
-        reidentification_protection_A_star = 1 - reid_risk_A_star['risk_metrics']['mean']
-        '''
+        reidentification_protection = 1 - reid_risk['risk_metrics']['mean']
 
     result = {
         'parameters': {
@@ -156,6 +153,13 @@ def _run_single_task(args):
     return result
 
 
+def _flush_results(results: list, output_path: str) -> None:
+    """Serialize and write current results list to disk."""
+    serializable_results = convert_to_serializable(results)
+    with open(output_path, 'w') as f:
+        json.dump(serializable_results, f, indent=2)
+
+
 def test_different_z_values_with_pool(
     log_path: str,
     time_windows: list,
@@ -170,15 +174,13 @@ def test_different_z_values_with_pool(
     alignment_based: bool = False,
     multi_processing: bool = False,
 ):
-
-    # Limit used cores, to ensure system responsiveness
-    total_cores = multiprocessing.cpu_count()
-
-    # Calculate 75% of the available cores
-    cores_to_use = int(total_cores * 0.8)
-
-    # Ensure at least one core is used
-    cores_to_use = max(1, cores_to_use)
+    mode_suffix = f"_{mode}"
+    if mode == 'ngram':
+        mode_suffix += f"_ngram{ngram_size}"
+    if explicit:
+        mode_suffix += "_explicit"
+    output_filename = f'results{mode_suffix}.json'
+    output_path = get_output_path(output_filename, log_name)
 
     # Prepare task list
     tasks = []
@@ -196,7 +198,6 @@ def test_different_z_values_with_pool(
                 'algorithm': 'z-anonymity',
                 'seed': seed,
                 'alignment_based': alignment_based,
-                'multiprocessing': multi_processing,
             })
     for z in z_values:  # baseline tasks
         tasks.append({
@@ -211,24 +212,58 @@ def test_different_z_values_with_pool(
             'algorithm': 'baseline',
             'seed': seed,
             'alignment_based': alignment_based,
-            'multiprocessing': multi_processing,
         })
 
-    mode_suffix = f"_{mode}"
-    if mode == 'ngram':
-        mode_suffix += f"_ngram{ngram_size}"
-    if explicit:
-        mode_suffix += "_explicit"
-    output_filename = f'results{mode_suffix}.json'
+    results = []
 
-    # Run pool with initializer so each worker loads the log once
-    with Pool(processes=cores_to_use, initializer=_worker_init, initargs=(log_path, source_attribute)) as pool:
-        results = list(pool.imap_unordered(_run_single_task, tasks))
-
-    # Serialize and save
-    serializable_results = convert_to_serializable(results)
-    with open(get_output_path(output_filename, log_name), 'w') as f:
-        json.dump(serializable_results, f, indent=2)
+    if multi_processing:
+        # -------------------------------------------------------
+        # Sequential outer loop so pm4py's internal parallelism
+        # (alignment computation, process discovery) can utilise
+        # all available cores without contention.
+        # -------------------------------------------------------
+        print(
+            f"[multi_processing=True] Running {len(tasks)} tasks sequentially; "
+            "pm4py internal parallelism enabled."
+        )
+        original_log = load_event_log(log_path)
+        for i, task in enumerate(tasks, 1):
+            print(
+                f"  [{i}/{len(tasks)}] alg={task['algorithm']} "
+                f"z={task['z']} window={task['time_window']}"
+            )
+            result = _execute_task(
+                original_log, source_attribute,
+                task['z'], task['time_window'], task['mode'],
+                task['ngram_size'], task['explicit'],
+                task['log_name'], task['algorithm'],
+                task['seed'], task['alignment_based'],
+                use_multiprocessing=True,          # enable pm4py-internal MP
+            )
+            results.append(result)
+            # Write results after every completed task
+            _flush_results(results, output_path)
+            print(f"     -> result written to {output_path}")
+    else:
+        # -------------------------------------------------------
+        # Parallel outer loop: spawn one process per task,
+        # pm4py internal parallelism disabled inside workers.
+        # -------------------------------------------------------
+        total_cores = multiprocessing.cpu_count()
+        cores_to_use = max(1, int(total_cores * 0.8))
+        print(
+            f"[multi_processing=False] Running {len(tasks)} tasks in Pool "
+            f"with {cores_to_use} workers."
+        )
+        with Pool(
+            processes=cores_to_use,
+            initializer=_worker_init,
+            initargs=(log_path, source_attribute)
+        ) as pool:
+            for result in pool.imap_unordered(_run_single_task, tasks):
+                results.append(result)
+                # Write results after every completed task
+                _flush_results(results, output_path)
 
     return results
 

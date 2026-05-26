@@ -1,0 +1,25 @@
+[
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 25,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 3,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 18246,
+      "anom_number_of_remaining_events": 88,
+      "event_removal_rate": 0.0048229748986079145,
+      "trace_removal_rate": 0.013816102906145784,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.04294478527607362,
+    "fitness": 0.5443815847950866,
+    "precision": 0.6819054354415033,
+    "generalization": 0.8598505739129652,
+    "simplicity": 0.6774193548387096,
+    "reidentification_protection": 0.7586206896551724
+  }
+]
