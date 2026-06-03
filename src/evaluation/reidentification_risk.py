@@ -1,6 +1,7 @@
 from pm4py.objects.log.obj import EventLog
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
+from multiprocessing import Pool
 import random
 import numpy as np
 from typing import List, Any, Tuple
@@ -67,11 +68,51 @@ def _list_is_subset(small_list, big_list):
     return True
 
 
-def detailed_counts_projection_A(traces_act, traces_time, number_points, seed=None):
+# ---------------------------------------------------------------------------
+# Module-level state shared across Pool workers (set once via initializer)
+# ---------------------------------------------------------------------------
+_reid_full_counter_act = None
+_reid_full_counter_ts  = None
+
+
+def _reid_worker_init(full_counter_act, full_counter_ts):
+    """Pool initializer: copy precomputed Counters into each worker process."""
+    global _reid_full_counter_act, _reid_full_counter_ts
+    _reid_full_counter_act = full_counter_act
+    _reid_full_counter_ts  = full_counter_ts
+
+
+def _reid_check_trace(args):
+    """
+    Check a single sampled pattern against its pre-filtered candidate traces.
+    Top-level picklable function required by multiprocessing.Pool.
+    """
+    i, pat_act, pat_ts, candidates = args
+    pat_act_counter = Counter(pat_act)
+    pat_ts_counter  = Counter(pat_ts)
+    match_count = 0
+    matched_indices = []
+    for j in sorted(candidates):
+        if not _is_subset(pat_act_counter, _reid_full_counter_act[j]):
+            continue
+        if not _is_subset(pat_ts_counter, _reid_full_counter_ts[j]):
+            continue
+        match_count += 1
+        matched_indices.append(j)
+    return i, match_count, (match_count == 1), matched_indices
+
+
+def detailed_counts_projection_A(traces_act, traces_time, number_points, seed=None, n_jobs=1):
     """
     List-based projection A (activities + timestamps) in the style of unicity_activites.py.
     Returns per-trace match counts, uniqueness flags, and overall unicity fraction.
     number_points: absolute integer count of points to sample per trace.
+
+    Optimizations applied:
+    - Inverted index reduces the candidate set for each pattern from O(n_traces) to
+      O(|traces containing all sampled activities|), dramatically cutting comparisons.
+    - n_jobs > 1 parallelises the per-trace matching loop across a multiprocessing.Pool;
+      Counter state is shared via the Pool initializer to avoid per-task pickling.
     """
     if seed is not None:
         random.seed(seed)
@@ -94,37 +135,80 @@ def detailed_counts_projection_A(traces_act, traces_time, number_points, seed=No
                 idxs = random.sample(list(range(trace_len)), k)
 
         sampled_act = [acts[j] for j in idxs if j < len(acts) and acts[j] is not None]
-        sampled_ts = [ts[j] for j in idxs if j < len(ts) and ts[j] is not None]
+        sampled_ts  = [ts[j]  for j in idxs if j < len(ts)  and ts[j]  is not None]
         sampled_patterns.append({'activity': sampled_act, 'timestamp': sampled_ts})
 
-    per_trace = []
-    uniques = 0
+    # Precompute Counter representations once to avoid O(n^2) re-building
+    full_counter_act = [Counter(a for a in acts  if a is not None) for acts  in traces_act]
+    full_counter_ts  = [Counter(t for t in times if t is not None) for times in traces_time]
+
+    # Build inverted index: activity -> set of trace indices that contain it
+    act_to_traces: defaultdict = defaultdict(set)
+    for j, acts in enumerate(traces_act):
+        for a in set(a for a in acts if a is not None):
+            act_to_traces[a].add(j)
+
+    # Precompute candidate sets per pattern via index intersection
+    task_args = []
     for i, pat in enumerate(sampled_patterns):
-        match_count = 0
-        matched_indices = []
-        for j in range(n_traces):
-            full_act = [a for a in traces_act[j] if a is not None]
-            if not _list_is_subset(pat['activity'], full_act):
-                continue
-            full_ts = [t for t in traces_time[j] if t is not None]
-            if not _list_is_subset(pat['timestamp'], full_ts):
-                continue
-            match_count += 1
-            matched_indices.append(j)
-        is_unique = (match_count == 1)
-        if is_unique:
-            uniques += 1
-        per_trace.append({
-            "sampled_activity": pat['activity'],
-            "sampled_timestamp": pat['timestamp'],
-            "match_count": match_count,
-            "is_unique": is_unique,
-            "matched_trace_indices": matched_indices,
-        })
+        unique_acts = set(pat['activity'])
+        if unique_acts:
+            candidates = set.intersection(*(act_to_traces[a] for a in unique_acts))
+        else:
+            candidates = set(range(n_traces))
+        task_args.append((i, pat['activity'], pat['timestamp'], candidates))
+
+    per_trace_results = [None] * n_traces
+    uniques = 0
+
+    if n_jobs > 1:
+        # Parallel path: distribute per-trace checks across Pool workers.
+        # Counters are shared via initializer (one copy per worker, not per task).
+        with Pool(
+            processes=n_jobs,
+            initializer=_reid_worker_init,
+            initargs=(full_counter_act, full_counter_ts),
+        ) as pool:
+            for i, match_count, is_unique, matched_indices in pool.imap_unordered(
+                _reid_check_trace, task_args
+            ):
+                if is_unique:
+                    uniques += 1
+                per_trace_results[i] = {
+                    "sampled_activity": sampled_patterns[i]['activity'],
+                    "sampled_timestamp": sampled_patterns[i]['timestamp'],
+                    "match_count": match_count,
+                    "is_unique": is_unique,
+                    "matched_trace_indices": matched_indices,
+                }
+    else:
+        # Sequential path: inline check with index-filtered candidates
+        for i, pat_act, pat_ts, candidates in task_args:
+            pat_act_counter = Counter(pat_act)
+            pat_ts_counter  = Counter(pat_ts)
+            match_count = 0
+            matched_indices = []
+            for j in sorted(candidates):
+                if not _is_subset(pat_act_counter, full_counter_act[j]):
+                    continue
+                if not _is_subset(pat_ts_counter, full_counter_ts[j]):
+                    continue
+                match_count += 1
+                matched_indices.append(j)
+            is_unique = (match_count == 1)
+            if is_unique:
+                uniques += 1
+            per_trace_results[i] = {
+                "sampled_activity": pat_act,
+                "sampled_timestamp": pat_ts,
+                "match_count": match_count,
+                "is_unique": is_unique,
+                "matched_trace_indices": matched_indices,
+            }
 
     unicity_fraction = uniques / n_traces if n_traces > 0 else 0.0
     return {
-        "per_trace": per_trace,
+        "per_trace": per_trace_results,
         "unicity_fraction": unicity_fraction,
     }
 
@@ -348,7 +432,7 @@ def calculate_reidentification_risk(
             abs_points = int(number_points)
 
         # Single draw to mirror original behavior
-        detailed = detailed_counts_projection_A(traces_act, traces_time, abs_points, seed=seed)
+        detailed = detailed_counts_projection_A(traces_act, traces_time, abs_points, seed=seed, n_jobs=n_jobs)
         unicity_fraction = detailed["unicity_fraction"]
         return {
             'parameters': {

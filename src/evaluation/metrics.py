@@ -289,6 +289,7 @@ def compute_quality_metrics(
 
         # Discover model using anonymized log
         model = discover_model(anonymized_log, multi_processing)
+        print("[DEBUG]: Finished computing model")
 
         if model is None:
             return None, None, None, None
@@ -296,10 +297,11 @@ def compute_quality_metrics(
 
         # compute fitness of the model against anonymized log
         fitness = compute_fitness(reference_log, net, im, fm, alignment_based, multi_processing)
+        print("[DEBUG]: Finished computing fitness")
 
         # compute precision of the model against anonymized log
         precision = compute_precision(reference_log, net, im, fm, alignment_based, multi_processing)
-
+        print("[DEBUG]: Finished computing precision")
         # model = discover_model(anonymized_log, multi_processing)
         # if model is None:
         #     return fitness, precision, None, None
@@ -308,9 +310,11 @@ def compute_quality_metrics(
 
         # compute generalization
         generalization = compute_generality(reference_log, net, im, fm)
+        print("[DEBUG]: Finished computing generalization")
 
         # compute simplicity of 'anonymized model'
         simplicity = compute_simplicity(net, im, fm)
+        print("[DEBUG]: Finished computing Simplicity")
 
 
 
