@@ -1,6 +1,6 @@
 import copy
 from collections import defaultdict
-from typing import Tuple
+from typing import List, Set, Tuple
 
 from pm4py.objects.log.obj import EventLog
 
@@ -22,134 +22,117 @@ def extract_ngrams_from_trace(trace_activity_list, n):
 def apply_baseline(
     original_log: EventLog,
     z: int,
-    window,  # ignored
+    window,  # ignored: the baseline uses Δt = ∞ by design
     mode: str,
     ngram_size: int,
     explicit: bool,
 ) -> Tuple[EventLog, int]:
     """
-    Baseline anonymization without time window or source separation.
+    Centralized baseline anonymization.
 
-    mode: "single" or "ngram"
+    Corresponds to running the same operators on the collapsed (single-stream)
+    log with Δt = ∞, i.e. without any source partition and without a time
+    window. Matches of the chosen behavior B are processed in completion-time
+    order across the whole log; ties at the exact same completion time are
+    handled in arrival order, matching the streaming convention of the
+    per-source filters (and of the original z-anonymity algorithm of
+    Jha et al., 2020).
+
+    mode: "single"  -> B^a (single activity occurrences).
+          "ngram"   -> B^w (consecutive n-grams over the trace).
+
+    explicit=False (zanon with Δt = ∞):
+        A match (c, τ, E) is released iff, after adding c to the set of cases
+        that have shown behavior B by completion time τ, the total number of
+        distinct contributing cases is ≥ z. The first z-1 distinct cases to
+        exhibit B are therefore suppressed; everything from the z-th case
+        onward is released.
+
+    explicit=True  (ezanon with Δt = ∞):
+        Once at least z distinct cases have ever exhibited behavior B, every
+        match of B is released, including those from the first z-1 cases that
+        completed before the threshold was reached.
     """
-    anonymized_log = copy.deepcopy(original_log)
+    if mode not in {"single", "ngram"}:
+        raise ValueError(f"Unknown mode '{mode}'; expected 'single' or 'ngram'")
+    if mode == "ngram" and ngram_size <= 0:
+        raise ValueError("ngram_size must be >=1 for ngram mode")
 
-    # Track which trace indices get edited
-    edited_traces = set()
+    anonymized_log = copy.deepcopy(original_log)
+    edited_traces: Set[int] = set()
+
+    # Collect, per behavior key, the list of matches.
+    # A match record is (completion_timestamp, case_id, positions) where
+    # `positions` are positions in the case's own trace.
+    behavior_matches: defaultdict[str, List[Tuple]] = defaultdict(list)
 
     if mode == "single":
-        # Build activity -> set of case ids
-        activity_to_cases = defaultdict(set)
         for trace in original_log:
             case_id = trace.attributes["concept:name"]
-            for ev in trace:
-                activity = ev["concept:name"]
-                activity_to_cases[activity].add(case_id)
-
-        # Determine qualifying activities (appearing in >= z distinct cases)
-        qualifying_activities = {act for act, cases in activity_to_cases.items() if len(cases) >= z}
-
-        """
-        # If explicit: we need all cases that contain any qualifying activity, and release all their events
-        if explicit:
-            # Build set of case_ids to fully keep (for activities that qualify)
-            cases_to_keep_full = set()
-            for trace in original_log:
-                case_id = trace.attributes["concept:name"]
-                for ev in trace:
-                    if ev["concept:name"] in qualifying_activities:
-                        cases_to_keep_full.add(case_id)
-                        break  # this case is in, no need to check further
-
-            # Filter anonymized_log: keep entire trace if its case is in cases_to_keep_full; otherwise drop all events
-            traces_to_delete = []
-            for ti, trace in enumerate(anonymized_log):
-                case_id = trace.attributes["concept:name"]
-                if case_id in cases_to_keep_full:
-                    # keep entire trace
-                    continue
-                else:
-                    # remove all events -> mark for deletion
-                    traces_to_delete.append(ti)
-                    edited_traces.add(ti)
-            for ti in reversed(traces_to_delete):
-                del anonymized_log._list[ti]
-
-        """
-        # Non-explicit: keep only events whose activity is qualifying
-        traces_to_delete = []
-        for ti, trace in enumerate(anonymized_log):
-            case_id = trace.attributes["concept:name"]
-            kept = []
-            for ev in trace:
-                if ev["concept:name"] in qualifying_activities:
-                    kept.append(ev)
-                else:
-                    edited_traces.add(ti)
-            trace._list = kept
-            if not kept:
-                traces_to_delete.append(ti)
-        for ti in reversed(traces_to_delete):
-            del anonymized_log._list[ti]
-
-    elif mode == "ngram":
-        if ngram_size <= 0:
-            raise ValueError("ngram_size must be >=1 for ngram mode")
-
-        # Step 1: collect for each trace its n-grams and which cases have which ngrams
-        ngram_to_cases = defaultdict(set)
-        trace_ngrams = []  # per trace list of (ngram, start, end)
+            for pos, ev in enumerate(trace):
+                act = ev["concept:name"]
+                ts = ev["time:timestamp"]
+                # singleton match: positions tuple has one element
+                behavior_matches[act].append((ts, case_id, (pos,)))
+    else:  # mode == "ngram"
         for trace in original_log:
             case_id = trace.attributes["concept:name"]
             activities = [ev["concept:name"] for ev in trace]
-            ngrams = extract_ngrams_from_trace(activities, ngram_size)
-            trace_ngrams.append(ngrams)
-            for ngram, start, end in ngrams:
-                ngram_to_cases[ngram].add(case_id)
+            timestamps = [ev["time:timestamp"] for ev in trace]
+            if len(activities) < ngram_size:
+                continue
+            for i in range(0, len(activities) - ngram_size + 1):
+                ngram = ">".join(activities[i : i + ngram_size])
+                completion_ts = timestamps[i + ngram_size - 1]
+                positions = tuple(range(i, i + ngram_size))
+                behavior_matches[ngram].append((completion_ts, case_id, positions))
 
-        # Qualifying ngrams: appearing in >= z distinct cases
-        qualifying_ngrams = {ng for ng, cases in ngram_to_cases.items() if len(cases) >= z}
+    # Per-behavior release computation.
+    events_to_release: Set[Tuple[str, int]] = set()
 
-        # Build release set: (case_id, position) tuples to keep
-        events_to_release = set()
+    for matches in behavior_matches.values():
+        # Sort by completion timestamp; Python's sort is stable, so ties at
+        # the same timestamp are processed in their original (arrival) order.
+        matches.sort(key=lambda m: m[0])
 
-        #if explicit:
-        # For each trace: if it contains any qualifying ngram, release all events composing those ngrams
-        for trace_idx, trace in enumerate(original_log):
-            case_id = trace.attributes["concept:name"]
-            ngrams = trace_ngrams[trace_idx]
-            for ngram, start, end in ngrams:
-                if ngram in qualifying_ngrams:
-                    for pos in range(start, end + 1):
-                        events_to_release.add((case_id, pos))
-                        ''' 
+        # Quick rejection: behaviors that never reach z distinct cases in the
+        # whole log cannot qualify under either operator.
+        distinct_cases = {case_id for _, case_id, _ in matches}
+        if len(distinct_cases) < z:
+            continue
+
+        if explicit:
+            # ezanon, Δt = ∞: once the threshold is met, every match of this
+            # behavior is released, in every case.
+            for _, case_id, positions in matches:
+                for pos in positions:
+                    events_to_release.add((case_id, pos))
         else:
-            # Non-explicit: release only the exact occurrences of qualifying ngrams in each trace (their constituent events)
-            for trace_idx, trace in enumerate(original_log):
-                case_id = trace.attributes["concept:name"]
-                ngrams = trace_ngrams[trace_idx]
-                for ngram, start, end in ngrams:
-                    if ngram in qualifying_ngrams:
-                        for pos in range(start, end + 1):
-                            events_to_release.add((case_id, pos))
-        '''
+            # zanon, Δt = ∞: sweep matches in completion-time order, release
+            # only those processed after the running set of distinct cases has
+            # reached z.
+            seen_cases: Set[str] = set()
+            for _, case_id, positions in matches:
+                seen_cases.add(case_id)
+                if len(seen_cases) >= z:
+                    for pos in positions:
+                        events_to_release.add((case_id, pos))
 
-        # Apply filtering based on events_to_release
-        traces_to_delete = set()
-        for trace_idx, trace in enumerate(anonymized_log):
-            case_id = trace.attributes["concept:name"]
-            kept = []
-            for pos, ev in enumerate(trace):
-                if (case_id, pos) in events_to_release:
-                    kept.append(ev)
-                else:
-                    edited_traces.add(trace_idx)
-            trace._list = kept
-            if not kept:
-                traces_to_delete.add(trace_idx)
-        for ti in sorted(traces_to_delete, reverse=True):
-            del anonymized_log._list[ti]
-    else:
-        raise ValueError(f"Unknown mode '{mode}'; expected 'single' or 'ngram'")
+    # Apply filtering: keep only events whose (case_id, pos) is in the
+    # release set; drop now-empty traces.
+    traces_to_delete: List[int] = []
+    for trace_idx, trace in enumerate(anonymized_log):
+        case_id = trace.attributes["concept:name"]
+        kept = []
+        for pos, ev in enumerate(trace):
+            if (case_id, pos) in events_to_release:
+                kept.append(ev)
+            else:
+                edited_traces.add(trace_idx)
+        trace._list = kept
+        if not kept:
+            traces_to_delete.append(trace_idx)
+    for ti in sorted(traces_to_delete, reverse=True):
+        del anonymized_log._list[ti]
 
     return anonymized_log, len(edited_traces)

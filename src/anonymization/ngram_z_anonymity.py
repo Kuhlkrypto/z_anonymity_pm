@@ -24,9 +24,13 @@ def apply_ngram_z_anonymity(log: EventLog,
                             explicit: bool,
                             source_attribute: str) -> Tuple[EventLog, int]:
     """
-    Apply z-anonymity to n-grams of activities in the event log,
-    where n-grams are built per source per case (i.e., all events in an n-gram
-    share the same source_attribute value and case).
+    Apply z-anonymity to n-grams of activities in the event log.
+
+    N-grams are taken over the per-source case projection: for each case c and
+    each source r, we form the timestamp-ordered subsequence of events of c
+    that were observed at source r, and read off n-grams as windows of n
+    consecutive positions of THAT subsequence. This matches the formal
+    definition B^w(S_r ↓ c).
 
     Returns:
         (anonymized_log, number_of_edited_traces)
@@ -41,31 +45,43 @@ def apply_ngram_z_anonymity(log: EventLog,
         case_id = trace.attributes['concept:name']
         length = len(trace)
 
-        # Precompute source of each event to allow checking uniformity quickly
+        if length < n:
+            continue
+
         sources = [event[source_attribute] for event in trace]
         activities = [event['concept:name'] for event in trace]
         timestamps = [event['time:timestamp'] for event in trace]
 
-        for i in range(0, length - n + 1):
-            # Check that the n events all have the same source
-            window_sources = sources[i:i + n]
-            if len(set(window_sources)) != 1:
-                continue  # skip n-gram spanning multiple sources
+        # Build the per-source case projection S_r ↓ c: for each source, the
+        # timestamp-ordered list of trace positions of c's events at that
+        # source. Sorting by timestamp explicitly makes this robust even if
+        # the trace is not strictly ordered.
+        positions_by_source: defaultdict[str, List[int]] = defaultdict(list)
+        for pos in range(length):
+            positions_by_source[sources[pos]].append(pos)
+        for src_positions in positions_by_source.values():
+            src_positions.sort(key=lambda p: timestamps[p])
 
-            src = window_sources[0]
-            ngram_list = activities[i:i + n]
-            ngram = '>'.join(ngram_list)
-            ngram_timestamp = timestamps[i + n - 1]  # timestamp of last event in n-gram
-            positions = list(range(i, i + n))  # actual positions in trace
+        # Read off n-grams from consecutive positions of each per-source
+        # projection. The positions stored are positions in the original
+        # trace, which is what the downstream release/filter step expects.
+        for src, src_positions in positions_by_source.items():
+            if len(src_positions) < n:
+                continue
+            for i in range(0, len(src_positions) - n + 1):
+                projection_positions = src_positions[i:i + n]
+                ngram_list = [activities[p] for p in projection_positions]
+                ngram = '>'.join(ngram_list)
+                ngram_timestamp = timestamps[projection_positions[-1]]
 
-            all_source_ngrams.append((
-                ngram_timestamp,
-                case_id,
-                ngram,
-                src,
-                i,           # start position
-                tuple(positions)  # tuple of positions making up this n-gram
-            ))
+                all_source_ngrams.append((
+                    ngram_timestamp,
+                    case_id,
+                    ngram,
+                    src,
+                    projection_positions[0],
+                    tuple(projection_positions),
+                ))
 
     # Group by source, then sort each source's n-grams chronologically
     source_to_ngrams: defaultdict[str, List] = defaultdict(list)
@@ -79,7 +95,12 @@ def apply_ngram_z_anonymity(log: EventLog,
     # Track events that are safe (to release / keep)
     events_to_release: Set[Tuple[str, int]] = set()
 
-    # Slide window per source
+    # Slide window per source. Following the sequential, zero-delay semantics
+    # of the original z-anonymity algorithm (Jha et al., 2020, Algorithm 1),
+    # each n-gram is processed in completion-time order and only matches that
+    # have already been seen (backward scan) are counted. Ties at the exact
+    # same completion time are therefore handled by arrival order, as in the
+    # original paper.
     for src, ngram_records in source_to_ngrams.items():
         # For each current n-gram, look backwards within time window for same n-gram
         for curr_idx, (curr_time, curr_case, curr_ngram, _, curr_start_pos, curr_positions) in enumerate(ngram_records):
