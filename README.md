@@ -85,8 +85,17 @@ The experiments use the following parameters:
 - **Behavioral Predicates**: Activity sequences of length 1, 2, and 3
 - **Algorithms**: Standard z-anonymity, explicit z-anonymity, and centralized baseline
 - **Parallelization**: Uses 80% of available CPU cores for efficiency
-  - **Global configuration**: Modify `cores_to_use = int(total_cores * 0.8)` in [`src/test_z_anonymity.py`](src/test_z_anonymity.py) (line 163)
+  - **Global configuration**: Modify `cores_to_use = int(total_cores * 0.8)` in [`src/test_z_anonymity.py`](src/test_z_anonymity.py)
     - Change multiplier: `0.5` for 50% of cores, `1.0` for all cores, etc.
+
+### Runtime Flags
+
+Two top-level flags at the top of `main()` in [`src/test_z_anonymity.py`](src/test_z_anonymity.py) control the conformance-checking strategy and the parallelism mode:
+
+| Flag | Default | Effect |
+|---|---|---|
+| `ALIGNMENT_BASED` | `True` | When `True`, fitness and precision are computed via **alignment-based** conformance checking (more accurate, slower). When `False`, the faster **token-based replay** is used instead. |
+| `TASK_INTERNAL_MULTI_PROCESSING` | `True` | When `True`, tasks run **sequentially** and pm4py's own internal thread pool is free to use all CPU cores (good for single-machine, alignment-heavy runs); the **re-identification risk assessment** also runs in parallel (`n_jobs=cpu_count()`). When `False`, an outer `multiprocessing.Pool` spawns one worker process per task in parallel, with pm4py internal parallelism and risk assessment both capped at a single thread per worker (`n_jobs=1`) to avoid nested process spawning. |
 
 
 ### Running the Evaluation
@@ -141,8 +150,17 @@ Following the paper's methodology, the implementation evaluates both privacy and
 
 #### Behavioral Preservation Metrics  
 - **Implementation**: [`src/evaluation/metrics.py`](src/evaluation/metrics.py)
-- **Preservation of Directly-Follows Relations (RDF)**: Fraction of original directly-follows relations preserved
-- **Fitness**: Conformance score of anonymized log against process model discovered from original log using inductive miner and token-based replay
+- **Preservation of Directly-Follows Relations (RDF)**: Fraction of original directly-follows relations preserved.
+
+#### Process-Model Quality Metrics
+A Petri net is discovered from the **anonymized** log using the Inductive Miner. All four classic quality dimensions are then computed against the **original** log:
+
+| Metric | Description | Range |
+|---|---|---|
+| **Fitness** | How well the reference log can be replayed on the discovered model (token-based or alignment-based). | [0, 1] — higher is better |
+| **Precision** | How much of the model's allowed behaviour is actually observed in the reference log (penalises overly general models). | [0, 1] — higher is better |
+| **Generality** | How well the model generalises beyond the training log (token-based generalisation score). | [0, 1] — higher is better |
+| **Simplicity** | Structural simplicity of the Petri net (inverse arc degree). | [0, 1] — higher is better |
 
 
 ## Results Structure

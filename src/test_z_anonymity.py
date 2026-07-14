@@ -182,7 +182,7 @@ def test_different_z_values_with_pool(
     cores_to_use: int = 4,
     seed: int | None = None,
     alignment_based: bool = False,
-    multi_processing: bool = False,
+    task_internal_multi_processing: bool = False, # mind that
 ):
     mode_suffix = f"_{mode}"
     if mode == 'ngram':
@@ -226,7 +226,7 @@ def test_different_z_values_with_pool(
 
     results = []
 
-    if multi_processing:
+    if task_internal_multi_processing:
         # -------------------------------------------------------
         # Sequential outer loop so pm4py's internal parallelism
         # (alignment computation, process discovery) can utilise
@@ -279,6 +279,19 @@ def test_different_z_values_with_pool(
 
 
 def main():
+    # ── Runtime flags ────────────────────────────────────────────────────────
+    # True  → alignment-based fitness/precision (accurate, slow)
+    # False → token-based replay (fast, approximate)
+    ALIGNMENT_BASED: bool = True
+
+    # True  → sequential outer loop, pm4py internal parallelism enabled
+    #         (recommended when ALIGNMENT_BASED=True)
+    # False → outer multiprocessing.Pool (one process per task),
+    #         pm4py internal parallelism disabled inside workers
+    #         (recommended when ALIGNMENT_BASED=False / token-based)
+    TASK_INTERNAL_MULTI_PROCESSING: bool = True
+    # ─────────────────────────────────────────────────────────────────────────
+
     raw_logs = [f for f in os.listdir(EVENT_LOG_PATH) if f.endswith(".xes.gz")]
     for raw_log in raw_logs:
         log_name = os.path.splitext(os.path.splitext(raw_log)[0])[0]
@@ -309,8 +322,8 @@ def main():
                         log_name=log_name,
                         cores_to_use=4,  # adjust for your machine
                         seed=42,
-                        alignment_based=True,
-                        multi_processing=True,
+                        alignment_based=ALIGNMENT_BASED,
+                        task_internal_multi_processing=TASK_INTERNAL_MULTI_PROCESSING,
                     )
 
 
