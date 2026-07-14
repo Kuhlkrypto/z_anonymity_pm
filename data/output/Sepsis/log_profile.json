@@ -1,0 +1,94 @@
+{
+  "log_name": "Sepsis",
+  "basics": {
+    "event_count": 15214,
+    "case_count": 1050,
+    "activity_count": 16,
+    "unique_variants_count": 846,
+    "events_per_case_mean": 14.4895,
+    "events_per_case_median": 13.0,
+    "events_per_case_stdev": 11.4759,
+    "events_per_case_variance": 131.6972,
+    "events_per_case_min": 3,
+    "events_per_case_max": 185,
+    "unique_start_activity_count": 6,
+    "unique_end_activity_count": 14,
+    "most_common_start_activity": "ER Registration",
+    "most_common_end_activity": "Release A",
+    "top10_variant_coverage": 0.1295,
+    "variant_entropy_bits": 9.334,
+    "loop_rate": 0.7086
+  },
+  "time": {
+    "log_start": "2013-11-07T08:18:29+00:00",
+    "log_end": "2015-06-05T12:25:11+00:00",
+    "time_span_seconds": 49694802.0,
+    "time_span_days": 575.17,
+    "throughput_time_seconds": {
+      "mean": 2459751.08,
+      "median": 461668.5,
+      "stdev": 5230428.56,
+      "min": 122.0,
+      "max": 36488789.0
+    },
+    "inter_event_delta_seconds": {
+      "mean": 182345.29,
+      "median": 393.5,
+      "stdev": 1494701.64,
+      "variance": 2234133005024.1
+    },
+    "inter_case_arrival_seconds": {
+      "mean": 39207.71,
+      "median": 24321.0,
+      "stdev": 41632.43
+    },
+    "concurrent_pair_rate": 0.314
+  },
+  "attributes": {
+    "source_attribute": "org:group",
+    "events_with_attribute": 15214,
+    "events_without_attribute": 0,
+    "fill_rate": 1.0,
+    "sparsity": 0.0,
+    "source_count": 26
+  },
+  "sources": {
+    "events_per_source": {
+      "mean": 585.15,
+      "median": 58.0,
+      "stdev": 1683.74,
+      "min": 1,
+      "max": 8111
+    },
+    "events_per_source_gini": 0.8385,
+    "source_event_entropy_bits": 2.2802,
+    "cases_per_source": {
+      "mean": 208.73,
+      "median": 56.0,
+      "stdev": 335.0,
+      "min": 1,
+      "max": 1050
+    },
+    "case_coverage_per_source_mean": 0.1988,
+    "activity_overlap_jaccard_mean": 0.4892,
+    "most_common_start_source": "A",
+    "most_common_end_source": "E"
+  },
+  "case_resources": {
+    "resources_per_case": {
+      "mean": 5.1686,
+      "median": 5.0,
+      "stdev": 1.5003,
+      "min": 2,
+      "max": 9
+    },
+    "resources_per_case_ratio_mean": 0.1988,
+    "resource_switches_per_case": {
+      "mean": 6.7124,
+      "median": 7.0,
+      "stdev": 2.4443
+    },
+    "resource_switch_rate_mean": 0.5841,
+    "continuous_resource_usage_rate": 0.5024
+  }
+}

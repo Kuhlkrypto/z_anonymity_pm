@@ -1,0 +1,3452 @@
+[
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 1,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7609,
+      "event_removal_rate": 0.8871400256499942,
+      "trace_removal_rate": 0.9184100418410042,
+      "trace_affected_rate": 0.5585774058577406
+    },
+    "ratio_of_remaining_directly_follows": 0.9393939393939394,
+    "fitness": 0.9997171858050519,
+    "precision": 0.23751686909581649,
+    "generalization": 0.7779493353844147,
+    "simplicity": 0.6239316239316238,
+    "reidentification_protection": 0.6917236142748671
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 1,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7609,
+      "event_removal_rate": 0.8871400256499942,
+      "trace_removal_rate": 0.9184100418410042,
+      "trace_affected_rate": 0.5585774058577406
+    },
+    "ratio_of_remaining_directly_follows": 0.9393939393939394,
+    "fitness": 0.9997171858050519,
+    "precision": 0.23751686909581649,
+    "generalization": 0.7779493353844147,
+    "simplicity": 0.6239316239316238,
+    "reidentification_protection": 0.6917236142748671
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 1,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7609,
+      "event_removal_rate": 0.8871400256499942,
+      "trace_removal_rate": 0.9184100418410042,
+      "trace_affected_rate": 0.5585774058577406
+    },
+    "ratio_of_remaining_directly_follows": 0.9393939393939394,
+    "fitness": 0.9997171858050519,
+    "precision": 0.23751686909581649,
+    "generalization": 0.7779493353844147,
+    "simplicity": 0.6239316239316238,
+    "reidentification_protection": 0.6917236142748671
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 1,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7609,
+      "event_removal_rate": 0.8871400256499942,
+      "trace_removal_rate": 0.9184100418410042,
+      "trace_affected_rate": 0.5585774058577406
+    },
+    "ratio_of_remaining_directly_follows": 0.9393939393939394,
+    "fitness": 0.9997171858050519,
+    "precision": 0.23751686909581649,
+    "generalization": 0.7779493353844147,
+    "simplicity": 0.6239316239316238,
+    "reidentification_protection": 0.6917236142748671
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 2,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 2494,
+      "event_removal_rate": 0.2907776611868952,
+      "trace_removal_rate": 0.3898186889818689,
+      "trace_affected_rate": 0.14295676429567644
+    },
+    "ratio_of_remaining_directly_follows": 0.26262626262626265,
+    "fitness": 0.9845330554692482,
+    "precision": 0.2953027269344579,
+    "generalization": 0.7235687229235391,
+    "simplicity": 0.6237623762376238,
+    "reidentification_protection": 0.7137745974955277
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 2,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 3224,
+      "event_removal_rate": 0.3758890054797715,
+      "trace_removal_rate": 0.496513249651325,
+      "trace_affected_rate": 0.18619246861924685
+    },
+    "ratio_of_remaining_directly_follows": 0.29292929292929293,
+    "fitness": 0.9077457723587432,
+    "precision": 0.2669678953626635,
+    "generalization": 0.743374510351549,
+    "simplicity": 0.6129032258064515,
+    "reidentification_protection": 0.7106741573033708
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 2,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 3704,
+      "event_removal_rate": 0.4318526291244025,
+      "trace_removal_rate": 0.5599721059972106,
+      "trace_affected_rate": 0.21687587168758718
+    },
+    "ratio_of_remaining_directly_follows": 0.3434343434343434,
+    "fitness": 0.9515404505654451,
+    "precision": 0.2884200502893871,
+    "generalization": 0.7863167020071349,
+    "simplicity": 0.6119402985074627,
+    "reidentification_protection": 0.7036114570361145
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 2,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 3983,
+      "event_removal_rate": 0.46438148536784424,
+      "trace_removal_rate": 0.595536959553696,
+      "trace_affected_rate": 0.23570432357043236
+    },
+    "ratio_of_remaining_directly_follows": 0.36363636363636365,
+    "fitness": 0.9908206987495691,
+    "precision": 0.20910673536123459,
+    "generalization": 0.7973514776760143,
+    "simplicity": 0.642384105960265,
+    "reidentification_protection": 0.6990632318501171
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 3,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 1289,
+      "event_removal_rate": 0.1502856476623528,
+      "trace_removal_rate": 0.2105997210599721,
+      "trace_affected_rate": 0.07182705718270571
+    },
+    "ratio_of_remaining_directly_follows": 0.15151515151515152,
+    "fitness": 0.9643016258497418,
+    "precision": 0.3679360837369857,
+    "generalization": 0.7602101183630348,
+    "simplicity": 0.6129032258064515,
+    "reidentification_protection": 0.8211920529801324
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 3,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 1778,
+      "event_removal_rate": 0.20729858925032063,
+      "trace_removal_rate": 0.28730822873082285,
+      "trace_affected_rate": 0.10390516039051603
+    },
+    "ratio_of_remaining_directly_follows": 0.1717171717171717,
+    "fitness": 0.970705963802197,
+    "precision": 0.355865848884249,
+    "generalization": 0.7820338490062675,
+    "simplicity": 0.6231884057971013,
+    "reidentification_protection": 0.7864077669902912
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 3,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 2214,
+      "event_removal_rate": 0.25813221406086045,
+      "trace_removal_rate": 0.3472803347280335,
+      "trace_affected_rate": 0.12761506276150628
+    },
+    "ratio_of_remaining_directly_follows": 0.1919191919191919,
+    "fitness": 0.9760600626709408,
+    "precision": 0.3570126081067,
+    "generalization": 0.7861651345197422,
+    "simplicity": 0.6438356164383561,
+    "reidentification_protection": 0.7530120481927711
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 3,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 2410,
+      "event_removal_rate": 0.28098402704908476,
+      "trace_removal_rate": 0.37517433751743373,
+      "trace_affected_rate": 0.13807531380753138
+    },
+    "ratio_of_remaining_directly_follows": 0.24242424242424243,
+    "fitness": 0.9837116852231912,
+    "precision": 0.2880900444987349,
+    "generalization": 0.8412340202687605,
+    "simplicity": 0.6271186440677966,
+    "reidentification_protection": 0.7397769516728625
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 4,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 818,
+      "event_removal_rate": 0.09537134196105865,
+      "trace_removal_rate": 0.1290097629009763,
+      "trace_affected_rate": 0.044630404463040445
+    },
+    "ratio_of_remaining_directly_follows": 0.10101010101010101,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8810810810810811
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 4,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 1210,
+      "event_removal_rate": 0.1410749679375073,
+      "trace_removal_rate": 0.1910739191073919,
+      "trace_affected_rate": 0.0697350069735007
+    },
+    "ratio_of_remaining_directly_follows": 0.1111111111111111,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.843065693430657
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 4,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 1548,
+      "event_removal_rate": 0.18048268625393493,
+      "trace_removal_rate": 0.24755927475592748,
+      "trace_affected_rate": 0.08716875871687588
+    },
+    "ratio_of_remaining_directly_follows": 0.1717171717171717,
+    "fitness": 0.9692572389643516,
+    "precision": 0.3691346020280595,
+    "generalization": 0.8186917398277342,
+    "simplicity": 0.6603773584905661,
+    "reidentification_protection": 0.7943661971830986
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 4,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 1693,
+      "event_removal_rate": 0.1973883642299172,
+      "trace_removal_rate": 0.26778242677824265,
+      "trace_affected_rate": 0.09623430962343096
+    },
+    "ratio_of_remaining_directly_follows": 0.20202020202020202,
+    "fitness": 0.9756615769168067,
+    "precision": 0.3570126081067,
+    "generalization": 0.836363807158259,
+    "simplicity": 0.6666666666666666,
+    "reidentification_protection": 0.7838541666666666
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 5,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 569,
+      "event_removal_rate": 0.06634021219540633,
+      "trace_removal_rate": 0.09065550906555091,
+      "trace_affected_rate": 0.028591352859135284
+    },
+    "ratio_of_remaining_directly_follows": 0.08080808080808081,
+    "fitness": 0.859319340585031,
+    "precision": 0.5710845842512424,
+    "generalization": 0.8673695642980814,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.8615384615384616
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 5,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 909,
+      "event_removal_rate": 0.10598111227701994,
+      "trace_removal_rate": 0.14086471408647142,
+      "trace_affected_rate": 0.05299860529986053
+    },
+    "ratio_of_remaining_directly_follows": 0.10101010101010101,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8564356435643564
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 5,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 1137,
+      "event_removal_rate": 0.13256383350821965,
+      "trace_removal_rate": 0.1806136680613668,
+      "trace_affected_rate": 0.06415620641562064
+    },
+    "ratio_of_remaining_directly_follows": 0.1111111111111111,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8455598455598455
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 5,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 1280,
+      "event_removal_rate": 0.149236329719016,
+      "trace_removal_rate": 0.20292887029288703,
+      "trace_affected_rate": 0.07322175732217573
+    },
+    "ratio_of_remaining_directly_follows": 0.13131313131313133,
+    "fitness": 0.9589442062663812,
+    "precision": 0.45889995359960023,
+    "generalization": 0.7995748873692932,
+    "simplicity": 0.6190476190476191,
+    "reidentification_protection": 0.8041237113402062
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 6,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 412,
+      "event_removal_rate": 0.048035443628308264,
+      "trace_removal_rate": 0.06903765690376569,
+      "trace_affected_rate": 0.01603905160390516
+    },
+    "ratio_of_remaining_directly_follows": 0.0707070707070707,
+    "fitness": 0.7777100115907644,
+    "precision": 0.6257340467179955,
+    "generalization": 0.7666069531935394,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.898989898989899
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 6,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 669,
+      "event_removal_rate": 0.07799930045470445,
+      "trace_removal_rate": 0.10599721059972106,
+      "trace_affected_rate": 0.03347280334728033
+    },
+    "ratio_of_remaining_directly_follows": 0.10101010101010101,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.9013157894736842
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 6,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 864,
+      "event_removal_rate": 0.10073452256033578,
+      "trace_removal_rate": 0.1401673640167364,
+      "trace_affected_rate": 0.044630404463040445
+    },
+    "ratio_of_remaining_directly_follows": 0.1111111111111111,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8656716417910448
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 6,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 985,
+      "event_removal_rate": 0.11484201935408651,
+      "trace_removal_rate": 0.15760111576011157,
+      "trace_affected_rate": 0.05509065550906555
+    },
+    "ratio_of_remaining_directly_follows": 0.13131313131313133,
+    "fitness": 0.9589442062663812,
+    "precision": 0.45889995359960023,
+    "generalization": 0.7995748873692932,
+    "simplicity": 0.6190476190476191,
+    "reidentification_protection": 0.831858407079646
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 7,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 289,
+      "event_removal_rate": 0.03369476506937157,
+      "trace_removal_rate": 0.05230125523012552,
+      "trace_affected_rate": 0.00906555090655509
+    },
+    "ratio_of_remaining_directly_follows": 0.0707070707070707,
+    "fitness": 0.7777100115907644,
+    "precision": 0.6257340467179955,
+    "generalization": 0.7666069531935394,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.88
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 7,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 510,
+      "event_removal_rate": 0.059461350122420424,
+      "trace_removal_rate": 0.08368200836820083,
+      "trace_affected_rate": 0.02092050209205021
+    },
+    "ratio_of_remaining_directly_follows": 0.08080808080808081,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8916666666666666
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 7,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 656,
+      "event_removal_rate": 0.07648361898099569,
+      "trace_removal_rate": 0.10739191073919108,
+      "trace_affected_rate": 0.030683403068340307
+    },
+    "ratio_of_remaining_directly_follows": 0.09090909090909091,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8571428571428572
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 7,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 776,
+      "event_removal_rate": 0.09047452489215344,
+      "trace_removal_rate": 0.12552301255230125,
+      "trace_affected_rate": 0.041143654114365415
+    },
+    "ratio_of_remaining_directly_follows": 0.1111111111111111,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8611111111111112
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 8,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 219,
+      "event_removal_rate": 0.02553340328786289,
+      "trace_removal_rate": 0.043235704323570434,
+      "trace_affected_rate": 0.003486750348675035
+    },
+    "ratio_of_remaining_directly_follows": 0.06060606060606061,
+    "fitness": 0.7777100115907644,
+    "precision": 0.6257340467179955,
+    "generalization": 0.7666069531935394,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.9193548387096774
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 8,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 382,
+      "event_removal_rate": 0.04453771715051883,
+      "trace_removal_rate": 0.06694560669456066,
+      "trace_affected_rate": 0.011157601115760111
+    },
+    "ratio_of_remaining_directly_follows": 0.08080808080808081,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8958333333333334
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 8,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 499,
+      "event_removal_rate": 0.058178850413897636,
+      "trace_removal_rate": 0.08577405857740586,
+      "trace_affected_rate": 0.017433751743375175
+    },
+    "ratio_of_remaining_directly_follows": 0.09090909090909091,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8943089430894309
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 8,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 624,
+      "event_removal_rate": 0.07275271073802028,
+      "trace_removal_rate": 0.10390516039051603,
+      "trace_affected_rate": 0.029288702928870293
+    },
+    "ratio_of_remaining_directly_follows": 0.10101010101010101,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8926174496644296
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 9,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 160,
+      "event_removal_rate": 0.018654541214877,
+      "trace_removal_rate": 0.03277545327754533,
+      "trace_affected_rate": 0.001394700139470014
+    },
+    "ratio_of_remaining_directly_follows": 0.06060606060606061,
+    "fitness": 0.7777100115907644,
+    "precision": 0.6257340467179955,
+    "generalization": 0.7666069531935394,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.8936170212765957
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 9,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 271,
+      "event_removal_rate": 0.03159612918269791,
+      "trace_removal_rate": 0.05299860529986053,
+      "trace_affected_rate": 0.002789400278940028
+    },
+    "ratio_of_remaining_directly_follows": 0.0707070707070707,
+    "fitness": 0.7777100115907644,
+    "precision": 0.6257340467179955,
+    "generalization": 0.7666069531935394,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.9342105263157895
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 9,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 391,
+      "event_removal_rate": 0.04558703509385566,
+      "trace_removal_rate": 0.06903765690376569,
+      "trace_affected_rate": 0.009762900976290097
+    },
+    "ratio_of_remaining_directly_follows": 0.09090909090909091,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8888888888888888
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 9,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 500,
+      "event_removal_rate": 0.05829544129649061,
+      "trace_removal_rate": 0.08577405857740586,
+      "trace_affected_rate": 0.01882845188284519
+    },
+    "ratio_of_remaining_directly_follows": 0.10101010101010101,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8780487804878049
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 10,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 115,
+      "event_removal_rate": 0.01340795149819284,
+      "trace_removal_rate": 0.024407252440725245,
+      "trace_affected_rate": 0.000697350069735007
+    },
+    "ratio_of_remaining_directly_follows": 0.06060606060606061,
+    "fitness": 0.774514930676018,
+    "precision": 0.7166567871962063,
+    "generalization": 0.736831716536843,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.9142857142857143
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 10,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 192,
+      "event_removal_rate": 0.022385449457852397,
+      "trace_removal_rate": 0.038354253835425386,
+      "trace_affected_rate": 0.001394700139470014
+    },
+    "ratio_of_remaining_directly_follows": 0.06060606060606061,
+    "fitness": 0.7777100115907644,
+    "precision": 0.6257340467179955,
+    "generalization": 0.7666069531935394,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.8909090909090909
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 10,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 306,
+      "event_removal_rate": 0.035676810073452254,
+      "trace_removal_rate": 0.05509065550906555,
+      "trace_affected_rate": 0.0048814504881450485
+    },
+    "ratio_of_remaining_directly_follows": 0.08080808080808081,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8860759493670887
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 10,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 393,
+      "event_removal_rate": 0.04582021685904162,
+      "trace_removal_rate": 0.06903765690376569,
+      "trace_affected_rate": 0.011157601115760111
+    },
+    "ratio_of_remaining_directly_follows": 0.10101010101010101,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8888888888888888
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 11,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 94,
+      "event_removal_rate": 0.010959542963740236,
+      "trace_removal_rate": 0.02092050209205021,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.6866333554095138,
+    "precision": 0.6655783582089552,
+    "generalization": 0.6520439442704098,
+    "simplicity": 0.6666666666666666,
+    "reidentification_protection": 0.9333333333333333
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 11,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 137,
+      "event_removal_rate": 0.01597295091523843,
+      "trace_removal_rate": 0.029288702928870293,
+      "trace_affected_rate": 0.000697350069735007
+    },
+    "ratio_of_remaining_directly_follows": 0.06060606060606061,
+    "fitness": 0.7775705415768174,
+    "precision": 0.6641948325657638,
+    "generalization": 0.7633431795088093,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.9047619047619048
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 11,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 224,
+      "event_removal_rate": 0.026116357700827795,
+      "trace_removal_rate": 0.042538354253835425,
+      "trace_affected_rate": 0.001394700139470014
+    },
+    "ratio_of_remaining_directly_follows": 0.08080808080808081,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8360655737704918
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 11,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 306,
+      "event_removal_rate": 0.035676810073452254,
+      "trace_removal_rate": 0.056485355648535567,
+      "trace_affected_rate": 0.005578800557880056
+    },
+    "ratio_of_remaining_directly_follows": 0.10101010101010101,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.8148148148148149
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 12,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 84,
+      "event_removal_rate": 0.009793634137810424,
+      "trace_removal_rate": 0.019525801952580194,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 12,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 102,
+      "event_removal_rate": 0.011892270024484085,
+      "trace_removal_rate": 0.023709902370990237,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.04040404040404041,
+    "fitness": 0.5878695216142824,
+    "precision": 0.5231127369471233,
+    "generalization": 0.7299474874953182,
+    "simplicity": 0.7142857142857143,
+    "reidentification_protection": 0.9117647058823529
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 12,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 166,
+      "event_removal_rate": 0.019354086510434885,
+      "trace_removal_rate": 0.03347280334728033,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.06060606060606061,
+    "fitness": 0.8937848197502569,
+    "precision": 0.47260062601948594,
+    "generalization": 0.8788291168224427,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.9791666666666666
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 12,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 229,
+      "event_removal_rate": 0.0266993121137927,
+      "trace_removal_rate": 0.044630404463040445,
+      "trace_affected_rate": 0.0020920502092050207
+    },
+    "ratio_of_remaining_directly_follows": 0.08080808080808081,
+    "fitness": 0.9202473941185313,
+    "precision": 0.38157817369318514,
+    "generalization": 0.8820717068085068,
+    "simplicity": 0.6296296296296295,
+    "reidentification_protection": 0.90625
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 13,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 77,
+      "event_removal_rate": 0.008977497959659554,
+      "trace_removal_rate": 0.01813110181311018,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 13,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 83,
+      "event_removal_rate": 0.009677043255217442,
+      "trace_removal_rate": 0.019525801952580194,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.5874046215677924,
+    "precision": 0.6219849742981416,
+    "generalization": 0.6295574617341021,
+    "simplicity": 0.6842105263157894,
+    "reidentification_protection": 0.9642857142857143
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 13,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 137,
+      "event_removal_rate": 0.01597295091523843,
+      "trace_removal_rate": 0.028591352859135284,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7748470021377966,
+    "precision": 0.6641948325657638,
+    "generalization": 0.765876866992694,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.9024390243902439
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 13,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 173,
+      "event_removal_rate": 0.020170222688585752,
+      "trace_removal_rate": 0.03417015341701534,
+      "trace_affected_rate": 0.0020920502092050207
+    },
+    "ratio_of_remaining_directly_follows": 0.06060606060606061,
+    "fitness": 0.7777100115907644,
+    "precision": 0.6257340467179955,
+    "generalization": 0.7666069531935394,
+    "simplicity": 0.6551724137931035,
+    "reidentification_protection": 0.8163265306122449
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 14,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 70,
+      "event_removal_rate": 0.008161361781508687,
+      "trace_removal_rate": 0.016736401673640166,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 14,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 72,
+      "event_removal_rate": 0.008394543546694649,
+      "trace_removal_rate": 0.017433751743375175,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.5874046215677924,
+    "precision": 0.6219849742981416,
+    "generalization": 0.6295574617341021,
+    "simplicity": 0.6842105263157894,
+    "reidentification_protection": 0.96
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 14,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 109,
+      "event_removal_rate": 0.012708406202634954,
+      "trace_removal_rate": 0.023709902370990237,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7631677721008258,
+    "precision": 0.6859739406547685,
+    "generalization": 0.6794996083966682,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.9705882352941176
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 14,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 127,
+      "event_removal_rate": 0.014807042089308615,
+      "trace_removal_rate": 0.026499302649930265,
+      "trace_affected_rate": 0.001394700139470014
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7635396921380178,
+    "precision": 0.6306662087912087,
+    "generalization": 0.7193770360195478,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.9473684210526316
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 15,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 63,
+      "event_removal_rate": 0.007345225603357817,
+      "trace_removal_rate": 0.015341701534170154,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 15,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 63,
+      "event_removal_rate": 0.007345225603357817,
+      "trace_removal_rate": 0.015341701534170154,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 15,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 91,
+      "event_removal_rate": 0.010609770315961291,
+      "trace_removal_rate": 0.020223152022315203,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7631677721008258,
+    "precision": 0.6859739406547685,
+    "generalization": 0.6794996083966682,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.9655172413793104
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 15,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 103,
+      "event_removal_rate": 0.012008860907077066,
+      "trace_removal_rate": 0.022315202231520222,
+      "trace_affected_rate": 0.000697350069735007
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7635396921380178,
+    "precision": 0.6306662087912087,
+    "generalization": 0.7193770360195478,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.90625
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 16,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 55,
+      "event_removal_rate": 0.006412498542613968,
+      "trace_removal_rate": 0.013249651324965132,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 16,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 55,
+      "event_removal_rate": 0.006412498542613968,
+      "trace_removal_rate": 0.013249651324965132,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 16,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 74,
+      "event_removal_rate": 0.008627725311880611,
+      "trace_removal_rate": 0.016736401673640166,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7631677721008258,
+    "precision": 0.6859739406547685,
+    "generalization": 0.6794996083966682,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.9583333333333334
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 16,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 80,
+      "event_removal_rate": 0.0093272706074385,
+      "trace_removal_rate": 0.01813110181311018,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7635396921380178,
+    "precision": 0.6306662087912087,
+    "generalization": 0.7193770360195478,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.8846153846153846
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 17,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 35,
+      "event_removal_rate": 0.004080680890754343,
+      "trace_removal_rate": 0.00906555090655509,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 17,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 47,
+      "event_removal_rate": 0.005479771481870118,
+      "trace_removal_rate": 0.011157601115760111,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 17,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 59,
+      "event_removal_rate": 0.006878862072985893,
+      "trace_removal_rate": 0.013249651324965132,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7631677721008258,
+    "precision": 0.6859739406547685,
+    "generalization": 0.6794996083966682,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 17,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 62,
+      "event_removal_rate": 0.007228634720764836,
+      "trace_removal_rate": 0.01394700139470014,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7631677721008258,
+    "precision": 0.6859739406547685,
+    "generalization": 0.6794996083966682,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.95
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 18,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 19,
+      "event_removal_rate": 0.0022152267692666433,
+      "trace_removal_rate": 0.005578800557880056,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.020202020202020204,
+    "fitness": 0.5476811823385451,
+    "precision": 0.7276353276353276,
+    "generalization": 0.7283089945747407,
+    "simplicity": 0.8181818181818181,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 18,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 39,
+      "event_removal_rate": 0.004547044421126268,
+      "trace_removal_rate": 0.00906555090655509,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6725431329673408,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7194942419818309,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 18,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 46,
+      "event_removal_rate": 0.005363180599277136,
+      "trace_removal_rate": 0.010460251046025104,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7631677721008258,
+    "precision": 0.6859739406547685,
+    "generalization": 0.6794996083966682,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.9333333333333333
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 18,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 49,
+      "event_removal_rate": 0.00571295324705608,
+      "trace_removal_rate": 0.011157601115760111,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.050505050505050504,
+    "fitness": 0.7631677721008258,
+    "precision": 0.6859739406547685,
+    "generalization": 0.6794996083966682,
+    "simplicity": 0.6923076923076922,
+    "reidentification_protection": 0.875
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 19,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 15,
+      "event_removal_rate": 0.0017488632388947185,
+      "trace_removal_rate": 0.0041841004184100415,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.020202020202020204,
+    "fitness": 0.5815116467072133,
+    "precision": 0.7276353276353276,
+    "generalization": 0.7297237677465795,
+    "simplicity": 1.0,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 19,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 31,
+      "event_removal_rate": 0.003614317360382418,
+      "trace_removal_rate": 0.00697350069735007,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 19,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 33,
+      "event_removal_rate": 0.0038474991255683807,
+      "trace_removal_rate": 0.007670850767085077,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6299970303793982,
+    "precision": 0.6219849742981416,
+    "generalization": 0.6273085801678653,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 0.9090909090909091
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 19,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 36,
+      "event_removal_rate": 0.004197271773347324,
+      "trace_removal_rate": 0.008368200836820083,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6299970303793982,
+    "precision": 0.6219849742981416,
+    "generalization": 0.6273085801678653,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 0.8333333333333334
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 20,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 12,
+      "event_removal_rate": 0.0013990905911157748,
+      "trace_removal_rate": 0.003486750348675035,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.020202020202020204,
+    "fitness": 0.5815116467072133,
+    "precision": 0.7276353276353276,
+    "generalization": 0.7297237677465795,
+    "simplicity": 1.0,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 20,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 24,
+      "event_removal_rate": 0.0027981811822315496,
+      "trace_removal_rate": 0.005578800557880056,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 20,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 24,
+      "event_removal_rate": 0.0027981811822315496,
+      "trace_removal_rate": 0.005578800557880056,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 20,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 26,
+      "event_removal_rate": 0.0030313629474175117,
+      "trace_removal_rate": 0.006276150627615063,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6299970303793982,
+    "precision": 0.6219849742981416,
+    "generalization": 0.6273085801678653,
+    "simplicity": 0.7499999999999999,
+    "reidentification_protection": 0.8888888888888888
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 21,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 9,
+      "event_removal_rate": 0.001049317943336831,
+      "trace_removal_rate": 0.002789400278940028,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.020202020202020204,
+    "fitness": 0.5815116467072133,
+    "precision": 0.7276353276353276,
+    "generalization": 0.7297237677465795,
+    "simplicity": 1.0,
+    "reidentification_protection": 0.75
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 21,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 17,
+      "event_removal_rate": 0.001982045004080681,
+      "trace_removal_rate": 0.0041841004184100415,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 0.8333333333333334
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 21,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 17,
+      "event_removal_rate": 0.001982045004080681,
+      "trace_removal_rate": 0.0041841004184100415,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 0.8333333333333334
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 21,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 17,
+      "event_removal_rate": 0.001982045004080681,
+      "trace_removal_rate": 0.0041841004184100415,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 0.8333333333333334
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 22,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 6,
+      "event_removal_rate": 0.0006995452955578874,
+      "trace_removal_rate": 0.0020920502092050207,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 22,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 10,
+      "event_removal_rate": 0.0011659088259298124,
+      "trace_removal_rate": 0.002789400278940028,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 0.75
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 22,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 10,
+      "event_removal_rate": 0.0011659088259298124,
+      "trace_removal_rate": 0.002789400278940028,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 0.75
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 22,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 10,
+      "event_removal_rate": 0.0011659088259298124,
+      "trace_removal_rate": 0.002789400278940028,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.030303030303030304,
+    "fitness": 0.6911513344906176,
+    "precision": 0.7669429546562653,
+    "generalization": 0.7318600101958428,
+    "simplicity": 0.8461538461538463,
+    "reidentification_protection": 0.75
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 23,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 4,
+      "event_removal_rate": 0.0004663635303719249,
+      "trace_removal_rate": 0.001394700139470014,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 23,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 4,
+      "event_removal_rate": 0.0004663635303719249,
+      "trace_removal_rate": 0.001394700139470014,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 23,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 4,
+      "event_removal_rate": 0.0004663635303719249,
+      "trace_removal_rate": 0.001394700139470014,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 23,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 4,
+      "event_removal_rate": 0.0004663635303719249,
+      "trace_removal_rate": 0.001394700139470014,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 1.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 24,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 2,
+      "event_removal_rate": 0.00023318176518596245,
+      "trace_removal_rate": 0.000697350069735007,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 0.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 24,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 2,
+      "event_removal_rate": 0.00023318176518596245,
+      "trace_removal_rate": 0.000697350069735007,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 0.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 24,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 2,
+      "event_removal_rate": 0.00023318176518596245,
+      "trace_removal_rate": 0.000697350069735007,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 0.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 24,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 2,
+      "event_removal_rate": 0.00023318176518596245,
+      "trace_removal_rate": 0.000697350069735007,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.010101010101010102,
+    "fitness": 0.44280101437169256,
+    "precision": 0.0,
+    "generalization": 0.9726512288186554,
+    "simplicity": 1.0,
+    "reidentification_protection": 0.0
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 25,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 25,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 25,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 25,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 26,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 26,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 26,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 26,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 27,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 27,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 27,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 27,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 28,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 28,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 28,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 28,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 29,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 29,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 29,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 29,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 30,
+      "time_window": 14400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 30,
+      "time_window": 86400,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 30,
+      "time_window": 172800,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "z-anonymity",
+      "z": 30,
+      "time_window": 259200,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 0,
+      "event_removal_rate": 0.0,
+      "trace_removal_rate": 0.0,
+      "trace_affected_rate": 0.0
+    },
+    "ratio_of_remaining_directly_follows": 0.0,
+    "fitness": null,
+    "precision": null,
+    "generalization": null,
+    "simplicity": null,
+    "reidentification_protection": null
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 1,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8461,
+      "event_removal_rate": 0.9864754576192142,
+      "trace_removal_rate": 0.9191073919107392,
+      "trace_affected_rate": 0.9191073919107392
+    },
+    "ratio_of_remaining_directly_follows": 1.0,
+    "fitness": 1.0,
+    "precision": 0.1659435198576793,
+    "generalization": 0.8319899267000584,
+    "simplicity": 0.6041666666666666,
+    "reidentification_protection": 0.6623672230652504
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 2,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8397,
+      "event_removal_rate": 0.9790136411332634,
+      "trace_removal_rate": 0.9184100418410042,
+      "trace_affected_rate": 0.9037656903765691
+    },
+    "ratio_of_remaining_directly_follows": 0.8282828282828283,
+    "fitness": 0.9998915233224857,
+    "precision": 0.18415205306328108,
+    "generalization": 0.7913758954149003,
+    "simplicity": 0.6387665198237886,
+    "reidentification_protection": 0.6529992406985573
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 3,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8346,
+      "event_removal_rate": 0.9730675061210213,
+      "trace_removal_rate": 0.9177126917712691,
+      "trace_affected_rate": 0.891213389121339
+    },
+    "ratio_of_remaining_directly_follows": 0.696969696969697,
+    "fitness": 0.9995013393548958,
+    "precision": 0.150719415582813,
+    "generalization": 0.7946442197916447,
+    "simplicity": 0.6216216216216216,
+    "reidentification_protection": 0.6565349544072948
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 4,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8292,
+      "event_removal_rate": 0.9667715984610004,
+      "trace_removal_rate": 0.9177126917712691,
+      "trace_affected_rate": 0.8807531380753139
+    },
+    "ratio_of_remaining_directly_follows": 0.6060606060606061,
+    "fitness": 0.9985983817050764,
+    "precision": 0.15432344021084143,
+    "generalization": 0.8050642279271021,
+    "simplicity": 0.6000000000000001,
+    "reidentification_protection": 0.6534954407294833
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 5,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8250,
+      "event_removal_rate": 0.9618747813920951,
+      "trace_removal_rate": 0.9163179916317992,
+      "trace_affected_rate": 0.8737796373779637
+    },
+    "ratio_of_remaining_directly_follows": 0.5757575757575758,
+    "fitness": 0.9987508326943475,
+    "precision": 0.18661339393717236,
+    "generalization": 0.8391046195726664,
+    "simplicity": 0.6263736263736264,
+    "reidentification_protection": 0.6605783866057839
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 6,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8201,
+      "event_removal_rate": 0.956161828145039,
+      "trace_removal_rate": 0.9156206415620641,
+      "trace_affected_rate": 0.8661087866108786
+    },
+    "ratio_of_remaining_directly_follows": 0.494949494949495,
+    "fitness": 0.9973431136506452,
+    "precision": 0.22813774121658403,
+    "generalization": 0.8464554216033353,
+    "simplicity": 0.6363636363636362,
+    "reidentification_protection": 0.6549885757806551
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 7,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8168,
+      "event_removal_rate": 0.9523143290194707,
+      "trace_removal_rate": 0.9156206415620641,
+      "trace_affected_rate": 0.8591352859135286
+    },
+    "ratio_of_remaining_directly_follows": 0.48484848484848486,
+    "fitness": 0.996309226570733,
+    "precision": 0.22319374627247168,
+    "generalization": 0.8472512995811045,
+    "simplicity": 0.642384105960265,
+    "reidentification_protection": 0.6656511805026657
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 8,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8132,
+      "event_removal_rate": 0.9481170572461234,
+      "trace_removal_rate": 0.9156206415620641,
+      "trace_affected_rate": 0.8549511854951185
+    },
+    "ratio_of_remaining_directly_follows": 0.47474747474747475,
+    "fitness": 0.996309226570733,
+    "precision": 0.20772492223565076,
+    "generalization": 0.8476530275180996,
+    "simplicity": 0.631578947368421,
+    "reidentification_protection": 0.6671744097486672
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 9,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8105,
+      "event_removal_rate": 0.9449691034161128,
+      "trace_removal_rate": 0.9149232914923291,
+      "trace_affected_rate": 0.8472803347280334
+    },
+    "ratio_of_remaining_directly_follows": 0.47474747474747475,
+    "fitness": 0.996309226570733,
+    "precision": 0.20772492223565076,
+    "generalization": 0.8476530275180996,
+    "simplicity": 0.631578947368421,
+    "reidentification_protection": 0.6623475609756098
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 10,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8078,
+      "event_removal_rate": 0.9418211495861024,
+      "trace_removal_rate": 0.9149232914923291,
+      "trace_affected_rate": 0.8430962343096234
+    },
+    "ratio_of_remaining_directly_follows": 0.47474747474747475,
+    "fitness": 0.996054638450036,
+    "precision": 0.20776608604323965,
+    "generalization": 0.8521425243248006,
+    "simplicity": 0.6375838926174496,
+    "reidentification_protection": 0.6661585365853658
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 11,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8051,
+      "event_removal_rate": 0.9386731957560919,
+      "trace_removal_rate": 0.9142259414225942,
+      "trace_affected_rate": 0.8382147838214784
+    },
+    "ratio_of_remaining_directly_follows": 0.43434343434343436,
+    "fitness": 0.9944216642647604,
+    "precision": 0.20778794572420323,
+    "generalization": 0.8673980874991526,
+    "simplicity": 0.635036496350365,
+    "reidentification_protection": 0.6651411136536995
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 12,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 8017,
+      "event_removal_rate": 0.9347091057479305,
+      "trace_removal_rate": 0.9135285913528591,
+      "trace_affected_rate": 0.8319386331938633
+    },
+    "ratio_of_remaining_directly_follows": 0.3939393939393939,
+    "fitness": 0.9927588164199043,
+    "precision": 0.22024574510251393,
+    "generalization": 0.8757849326901683,
+    "simplicity": 0.6283185840707964,
+    "reidentification_protection": 0.666412213740458
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 13,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7995,
+      "event_removal_rate": 0.932144106330885,
+      "trace_removal_rate": 0.9135285913528591,
+      "trace_affected_rate": 0.8277545327754533
+    },
+    "ratio_of_remaining_directly_follows": 0.3939393939393939,
+    "fitness": 0.9927588164199043,
+    "precision": 0.22024574510251393,
+    "generalization": 0.8757849326901683,
+    "simplicity": 0.6283185840707964,
+    "reidentification_protection": 0.6610687022900763
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 14,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7974,
+      "event_removal_rate": 0.9296956977964324,
+      "trace_removal_rate": 0.9135285913528591,
+      "trace_affected_rate": 0.8214783821478382
+    },
+    "ratio_of_remaining_directly_follows": 0.3939393939393939,
+    "fitness": 0.9927588164199043,
+    "precision": 0.22024574510251393,
+    "generalization": 0.8554178412322574,
+    "simplicity": 0.6206896551724138,
+    "reidentification_protection": 0.6755725190839694
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 15,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7946,
+      "event_removal_rate": 0.9264311530838288,
+      "trace_removal_rate": 0.9128312412831241,
+      "trace_affected_rate": 0.8152022315202232
+    },
+    "ratio_of_remaining_directly_follows": 0.3939393939393939,
+    "fitness": 0.9927588164199043,
+    "precision": 0.22049734253625453,
+    "generalization": 0.839440999910474,
+    "simplicity": 0.6179775280898876,
+    "reidentification_protection": 0.6722689075630253
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 16,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7917,
+      "event_removal_rate": 0.9230500174886324,
+      "trace_removal_rate": 0.9128312412831241,
+      "trace_affected_rate": 0.8110181311018131
+    },
+    "ratio_of_remaining_directly_follows": 0.3939393939393939,
+    "fitness": 0.9927588164199043,
+    "precision": 0.22049734253625453,
+    "generalization": 0.8648786059683672,
+    "simplicity": 0.627906976744186,
+    "reidentification_protection": 0.6730328495034377
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 17,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7893,
+      "event_removal_rate": 0.9202518363064008,
+      "trace_removal_rate": 0.9128312412831241,
+      "trace_affected_rate": 0.805439330543933
+    },
+    "ratio_of_remaining_directly_follows": 0.3939393939393939,
+    "fitness": 0.9927588164199043,
+    "precision": 0.22049734253625453,
+    "generalization": 0.8648786059683672,
+    "simplicity": 0.627906976744186,
+    "reidentification_protection": 0.6799083269671504
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 18,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7872,
+      "event_removal_rate": 0.9178034277719482,
+      "trace_removal_rate": 0.9128312412831241,
+      "trace_affected_rate": 0.800557880055788
+    },
+    "ratio_of_remaining_directly_follows": 0.3939393939393939,
+    "fitness": 0.9927588164199043,
+    "precision": 0.22049734253625453,
+    "generalization": 0.8648786059683672,
+    "simplicity": 0.627906976744186,
+    "reidentification_protection": 0.677616501145913
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 19,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7850,
+      "event_removal_rate": 0.9152384283549027,
+      "trace_removal_rate": 0.9107391910739191,
+      "trace_affected_rate": 0.795676429567643
+    },
+    "ratio_of_remaining_directly_follows": 0.3838383838383838,
+    "fitness": 0.9919684863408712,
+    "precision": 0.22066581552766606,
+    "generalization": 0.864804874794856,
+    "simplicity": 0.627906976744186,
+    "reidentification_protection": 0.675344563552833
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 20,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7828,
+      "event_removal_rate": 0.9126734289378571,
+      "trace_removal_rate": 0.9100418410041841,
+      "trace_affected_rate": 0.791492329149233
+    },
+    "ratio_of_remaining_directly_follows": 0.3838383838383838,
+    "fitness": 0.9919684863408712,
+    "precision": 0.22066581552766606,
+    "generalization": 0.864804874794856,
+    "simplicity": 0.627906976744186,
+    "reidentification_protection": 0.6789272030651341
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 21,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7808,
+      "event_removal_rate": 0.9103416112859974,
+      "trace_removal_rate": 0.9086471408647141,
+      "trace_affected_rate": 0.7880055788005579
+    },
+    "ratio_of_remaining_directly_follows": 0.3434343434343434,
+    "fitness": 0.9874766663678792,
+    "precision": 0.2405212161710658,
+    "generalization": 0.8760668782839672,
+    "simplicity": 0.6103896103896105,
+    "reidentification_protection": 0.6738296239447429
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 22,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7773,
+      "event_removal_rate": 0.9062609303952431,
+      "trace_removal_rate": 0.907252440725244,
+      "trace_affected_rate": 0.7845188284518828
+    },
+    "ratio_of_remaining_directly_follows": 0.3434343434343434,
+    "fitness": 0.9874766663678792,
+    "precision": 0.2405212161710658,
+    "generalization": 0.8760668782839672,
+    "simplicity": 0.6103896103896105,
+    "reidentification_protection": 0.6787086856264413
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 23,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7757,
+      "event_removal_rate": 0.9043954762737554,
+      "trace_removal_rate": 0.9065550906555091,
+      "trace_affected_rate": 0.7824267782426778
+    },
+    "ratio_of_remaining_directly_follows": 0.3333333333333333,
+    "fitness": 0.9455601310814927,
+    "precision": 0.3073484405625666,
+    "generalization": 0.8386284495596269,
+    "simplicity": 0.5849056603773586,
+    "reidentification_protection": 0.6792307692307693
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 24,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7741,
+      "event_removal_rate": 0.9025300221522677,
+      "trace_removal_rate": 0.9065550906555091,
+      "trace_affected_rate": 0.7761506276150628
+    },
+    "ratio_of_remaining_directly_follows": 0.32323232323232326,
+    "fitness": 0.9453857935640589,
+    "precision": 0.31251891646489105,
+    "generalization": 0.8380339002846644,
+    "simplicity": 0.6000000000000001,
+    "reidentification_protection": 0.6784615384615384
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 25,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7724,
+      "event_removal_rate": 0.900547977148187,
+      "trace_removal_rate": 0.9058577405857741,
+      "trace_affected_rate": 0.7726638772663877
+    },
+    "ratio_of_remaining_directly_follows": 0.32323232323232326,
+    "fitness": 0.9453857935640589,
+    "precision": 0.31251891646489105,
+    "generalization": 0.8380339002846644,
+    "simplicity": 0.6000000000000001,
+    "reidentification_protection": 0.6859122401847575
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 26,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7702,
+      "event_removal_rate": 0.8979829777311414,
+      "trace_removal_rate": 0.905160390516039,
+      "trace_affected_rate": 0.7677824267782427
+    },
+    "ratio_of_remaining_directly_follows": 0.31313131313131315,
+    "fitness": 0.9453857935640589,
+    "precision": 0.31251891646489105,
+    "generalization": 0.7981275240806328,
+    "simplicity": 0.5849056603773586,
+    "reidentification_protection": 0.6856702619414483
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 27,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7683,
+      "event_removal_rate": 0.8957677509618748,
+      "trace_removal_rate": 0.904463040446304,
+      "trace_affected_rate": 0.7642956764295676
+    },
+    "ratio_of_remaining_directly_follows": 0.30303030303030304,
+    "fitness": 0.9842744079877968,
+    "precision": 0.28428720083246617,
+    "generalization": 0.8089701784855302,
+    "simplicity": 0.6470588235294118,
+    "reidentification_protection": 0.684656900539707
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 28,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7663,
+      "event_removal_rate": 0.8934359333100151,
+      "trace_removal_rate": 0.903068340306834,
+      "trace_affected_rate": 0.7615062761506276
+    },
+    "ratio_of_remaining_directly_follows": 0.29292929292929293,
+    "fitness": 0.9842744079877968,
+    "precision": 0.28428720083246617,
+    "generalization": 0.8089701784855302,
+    "simplicity": 0.6470588235294118,
+    "reidentification_protection": 0.6795366795366795
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 29,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7646,
+      "event_removal_rate": 0.8914538883059345,
+      "trace_removal_rate": 0.903068340306834,
+      "trace_affected_rate": 0.7573221757322176
+    },
+    "ratio_of_remaining_directly_follows": 0.2828282828282828,
+    "fitness": 0.984146560475012,
+    "precision": 0.3764295228034722,
+    "generalization": 0.8178058036877883,
+    "simplicity": 0.6565656565656566,
+    "reidentification_protection": 0.6895752895752896
+  },
+  {
+    "parameters": {
+      "anom_alg": "baseline",
+      "z": 30,
+      "time_window": null,
+      "mode": "ngram",
+      "ngram_size": 2,
+      "explicit": false
+    },
+    "anonymized_log_stats": {
+      "original_number_of_events": 8577,
+      "anom_number_of_remaining_events": 7628,
+      "event_removal_rate": 0.8893552524192608,
+      "trace_removal_rate": 0.903068340306834,
+      "trace_affected_rate": 0.7531380753138075
+    },
+    "ratio_of_remaining_directly_follows": 0.2828282828282828,
+    "fitness": 0.984146560475012,
+    "precision": 0.3764295228034722,
+    "generalization": 0.8178058036877883,
+    "simplicity": 0.6565656565656566,
+    "reidentification_protection": 0.6926640926640927
+  }
+]

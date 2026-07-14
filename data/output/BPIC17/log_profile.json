@@ -1,0 +1,94 @@
+{
+  "log_name": "BPIC17",
+  "basics": {
+    "event_count": 1202267,
+    "case_count": 31509,
+    "activity_count": 26,
+    "unique_variants_count": 15930,
+    "events_per_case_mean": 38.1563,
+    "events_per_case_median": 35,
+    "events_per_case_stdev": 16.7153,
+    "events_per_case_variance": 279.4015,
+    "events_per_case_min": 10,
+    "events_per_case_max": 180,
+    "unique_start_activity_count": 1,
+    "unique_end_activity_count": 12,
+    "most_common_start_activity": "A_Create Application",
+    "most_common_end_activity": "W_Validate application",
+    "top10_variant_coverage": 0.1533,
+    "variant_entropy_bits": 11.9931,
+    "loop_rate": 1.0
+  },
+  "time": {
+    "log_start": "2016-01-01T09:51:15.304000+00:00",
+    "log_end": "2017-02-01T14:11:03.499000+00:00",
+    "time_span_seconds": 34316388.195,
+    "time_span_days": 397.18,
+    "throughput_time_seconds": {
+      "mean": 1892125.92,
+      "median": 1649180.67,
+      "stdev": 1137821.69,
+      "min": 201.06,
+      "max": 24716658.65
+    },
+    "inter_event_delta_seconds": {
+      "mean": 50923.42,
+      "median": 8.02,
+      "stdev": 235915.55,
+      "variance": 55656146723.19
+    },
+    "inter_case_arrival_seconds": {
+      "mean": 1002.23,
+      "median": 408.98,
+      "stdev": 2659.78
+    },
+    "concurrent_pair_rate": 0.0
+  },
+  "attributes": {
+    "source_attribute": "org:resource",
+    "events_with_attribute": 1202267,
+    "events_without_attribute": 0,
+    "fill_rate": 1.0,
+    "sparsity": 0.0,
+    "source_count": 149
+  },
+  "sources": {
+    "events_per_source": {
+      "mean": 8068.91,
+      "median": 6037,
+      "stdev": 13184.72,
+      "min": 2,
+      "max": 148404
+    },
+    "events_per_source_gini": 0.5426,
+    "source_event_entropy_bits": 6.3444,
+    "cases_per_source": {
+      "mean": 1475.22,
+      "median": 1038,
+      "stdev": 2189.59,
+      "min": 1,
+      "max": 23469
+    },
+    "case_coverage_per_source_mean": 0.0468,
+    "activity_overlap_jaccard_mean": 0.5938,
+    "most_common_start_source": "User_1",
+    "most_common_end_source": "User_1"
+  },
+  "case_resources": {
+    "resources_per_case": {
+      "mean": 6.976,
+      "median": 7,
+      "stdev": 3.2773,
+      "min": 1,
+      "max": 31
+    },
+    "resources_per_case_ratio_mean": 0.0468,
+    "resource_switches_per_case": {
+      "mean": 6.914,
+      "median": 6,
+      "stdev": 4.0855
+    },
+    "resource_switch_rate_mean": 0.1774,
+    "continuous_resource_usage_rate": 0.8139
+  }
+}

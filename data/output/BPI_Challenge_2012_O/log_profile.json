@@ -1,0 +1,94 @@
+{
+  "log_name": "BPI_Challenge_2012_O",
+  "basics": {
+    "event_count": 31244,
+    "case_count": 5015,
+    "activity_count": 7,
+    "unique_variants_count": 168,
+    "events_per_case_mean": 6.2301,
+    "events_per_case_median": 5,
+    "events_per_case_stdev": 3.1695,
+    "events_per_case_variance": 10.0456,
+    "events_per_case_min": 3,
+    "events_per_case_max": 30,
+    "unique_start_activity_count": 1,
+    "unique_end_activity_count": 5,
+    "most_common_start_activity": "O_SELECTED",
+    "most_common_end_activity": "O_ACCEPTED",
+    "top10_variant_coverage": 0.8307,
+    "variant_entropy_bits": 3.7528,
+    "loop_rate": 0.2867
+  },
+  "time": {
+    "log_start": "2011-10-01T10:44:40.725000+00:00",
+    "log_end": "2012-03-14T15:50:59.683000+00:00",
+    "time_span_seconds": 14274378.958,
+    "time_span_days": 165.21,
+    "throughput_time_seconds": {
+      "mean": 1484034.34,
+      "median": 1208629.83,
+      "stdev": 986300.29,
+      "min": 0.67,
+      "max": 7733406.16
+    },
+    "inter_event_delta_seconds": {
+      "mean": 283748.23,
+      "median": 1.36,
+      "stdev": 580513.52,
+      "variance": 336995949054.89
+    },
+    "inter_case_arrival_seconds": {
+      "mean": 2843.54,
+      "median": 715.29,
+      "stdev": 13308.7
+    },
+    "concurrent_pair_rate": 0.0715
+  },
+  "attributes": {
+    "source_attribute": "org:resource",
+    "events_with_attribute": 31244,
+    "events_without_attribute": 0,
+    "fill_rate": 1.0,
+    "sparsity": 0.0,
+    "source_count": 60
+  },
+  "sources": {
+    "events_per_source": {
+      "mean": 520.73,
+      "median": 532.0,
+      "stdev": 337.54,
+      "min": 12,
+      "max": 1159
+    },
+    "events_per_source_gini": 0.37,
+    "source_event_entropy_bits": 5.5551,
+    "cases_per_source": {
+      "mean": 229.28,
+      "median": 163.0,
+      "stdev": 222.01,
+      "min": 4,
+      "max": 900
+    },
+    "case_coverage_per_source_mean": 0.0457,
+    "activity_overlap_jaccard_mean": 0.7807,
+    "most_common_start_source": "11169",
+    "most_common_end_source": "10138"
+  },
+  "case_resources": {
+    "resources_per_case": {
+      "mean": 2.7432,
+      "median": 3,
+      "stdev": 0.8522,
+      "min": 1,
+      "max": 7
+    },
+    "resources_per_case_ratio_mean": 0.0457,
+    "resource_switches_per_case": {
+      "mean": 1.7673,
+      "median": 2,
+      "stdev": 0.8978
+    },
+    "resource_switch_rate_mean": 0.3643,
+    "continuous_resource_usage_rate": 0.6621
+  }
+}
