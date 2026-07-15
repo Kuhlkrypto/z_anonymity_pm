@@ -8,6 +8,7 @@ from multiprocessing import Pool
 
 import numpy as np
 from pm4py.algo.evaluation.replay_fitness.variants import alignment_based
+from scipy.constants import precision
 
 from evaluation.metrics import compute_quality_metrics
 from src.utils.log_utils import load_event_log
@@ -114,33 +115,32 @@ def _execute_task(
                 original_log, z, time_window if time_window is not None else 0, ngram_size, explicit, source_attribute
             )
 
-    anonymized_log_stats = get_event_log_stats(original_log, anonymized_log, number_of_edited_traces)
+    # anonymized_log_stats = get_event_log_stats(original_log, anonymized_log, number_of_edited_traces)
     print("[DEBUG]: Finished computing anonymized log stats")
     ratio_of_remaining_directly_follows = get_ratio_of_remaining_directly_follows(original_log, anonymized_log)
     print("[DEBUG]: Finished computing ratio of remaining directly follows")
     # compute the quality metrics – multiprocessing flag controls internal pm4py parallelism
-    fitness, precision, generalization, simplicity = compute_quality_metrics(
-        original_log, anonymized_log, alignment_based, use_multiprocessing
-    )
+    # fitness, precision, generalization, simplicity = compute_quality_metrics(original_log, anonymized_log, alignment_based, use_multiprocessing)
+    precision = compute_quality_metrics(original_log, anonymized_log, alignment_based, use_multiprocessing)
     print("[DEBUG]: Finished computing quality metrics")
-    if len(anonymized_log) == 0:
-        reidentification_protection = None
-        print("[DEBUG]: RISK is None")
-    else:
-        # Determine base projection
-        projection_base = 'A_list*'
-
-        # When running sequentially (use_multiprocessing=True), pm4py is done here
-        # and all cores are free → use them for the risk calculation.
-        # In Pool mode the outer pool owns the cores, so keep n_jobs=1 to avoid
-        # nested process explosion.
-        n_jobs_risk = multiprocessing.cpu_count() if use_multiprocessing else 1
-        reid_risk = calculate_reidentification_risk(
-            anonymized_log, projection=projection_base, ngram_size=ngram_size,
-            seed=seed, n_jobs=n_jobs_risk
-        )
-        print("[DEBUG]: Finished computing RISK")
-        reidentification_protection = 1 - reid_risk['risk_metrics']['mean']
+    # if len(anonymized_log) == 0:
+    #     reidentification_protection = None
+    #     print("[DEBUG]: RISK is None")
+    # else:
+    #     # Determine base projection
+    #     projection_base = 'A_list*'
+    #
+    #     # When running sequentially (use_multiprocessing=True), pm4py is done here
+    #     # and all cores are free → use them for the risk calculation.
+    #     # In Pool mode the outer pool owns the cores, so keep n_jobs=1 to avoid
+    #     # nested process explosion.
+    #     n_jobs_risk = multiprocessing.cpu_count() if use_multiprocessing else 1
+    #     reid_risk = calculate_reidentification_risk(
+    #         anonymized_log, projection=projection_base, ngram_size=ngram_size,
+    #         seed=seed, n_jobs=n_jobs_risk
+    #     )
+    #     print("[DEBUG]: Finished computing RISK")
+    #     reidentification_protection = 1 - reid_risk['risk_metrics']['mean']
 
     result = {
         'parameters': {
@@ -151,13 +151,13 @@ def _execute_task(
             'ngram_size': ngram_size if mode == 'ngram' else None,
             'explicit': explicit
         },
-        'anonymized_log_stats': anonymized_log_stats,
-        'ratio_of_remaining_directly_follows': ratio_of_remaining_directly_follows,
-        'fitness': fitness,
+        # 'anonymized_log_stats': anonymized_log_stats,
+        # 'ratio_of_remaining_directly_follows': ratio_of_remaining_directly_follows,
+        # 'fitness': fitness,
         'precision': precision,
-        'generalization': generalization,
-        'simplicity': simplicity,
-        'reidentification_protection': reidentification_protection
+        # 'generalization': generalization,
+        # 'simplicity': simplicity,
+        # 'reidentification_protection': reidentification_protection
     }
     return result
 
@@ -299,6 +299,11 @@ def main():
             source_attribute = 'org:group'
         else:
             source_attribute = 'org:resource'
+
+        # BPIC17 is too large for alignment-based conformance checking;
+        # force token-based replay regardless of the global flag.
+        alignment_based_for_log = False if log_name == 'BPIC17' else ALIGNMENT_BASED
+
         full_path = os.path.join(EVENT_LOG_PATH, raw_log)
 
         h = 3600 # 1 hour in seconds
@@ -322,7 +327,7 @@ def main():
                         log_name=log_name,
                         cores_to_use=4,  # adjust for your machine
                         seed=42,
-                        alignment_based=ALIGNMENT_BASED,
+                        alignment_based=alignment_based_for_log,
                         task_internal_multi_processing=TASK_INTERNAL_MULTI_PROCESSING,
                     )
 
